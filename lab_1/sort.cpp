@@ -17,13 +17,12 @@ int main()
 
     for (int i = 0; i < 10; i++) 
     {
-        for (int j = 1; j < i; j++) 
+        for (int j = i + 1; j < 10; j++) // had to change from j=1 to j=i+1 and j<i to j<10.
         {
             if (numbers[j] < numbers[i]) {
                 val = numbers[i];
                 numbers[i] = numbers[j];
                 numbers[j] = val;
-
             }
         }
     }
