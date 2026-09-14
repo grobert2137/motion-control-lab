@@ -1,6 +1,5 @@
-// Program to check addition of hexadecimal numbers
-#include <stdio.h> // need stdio
-//#include <cstdio> this should work on windows I think
+//#define _CRT_SECURE_NO_WARNINGS // supress MSVC warnings
+#include <stdio.h> // need stdio since no cstdio on Clang(Mac)
 
 int main() {
 
