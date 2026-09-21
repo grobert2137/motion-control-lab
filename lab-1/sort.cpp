@@ -1,4 +1,5 @@
 #include <cstdio> // for printf and scanf
+ 
 
 int main() 
 {

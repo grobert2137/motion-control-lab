@@ -1,7 +1,7 @@
 clear; close all;
 
 % create time vector
-t = 0:0.1:5;
+t = 0:0.01:5;
 
 % create amplitudes
 a1 = 1;
@@ -18,4 +18,4 @@ y2 = a2*cos(2*pi*t*f2);
 plot(t,y1);
 grid on; hold on;
 plot(t, y2);
-legend on;
+legend("y1", "y2");
