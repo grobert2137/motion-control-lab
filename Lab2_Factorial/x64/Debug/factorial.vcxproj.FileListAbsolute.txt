@@ -1,0 +1,3 @@
+C:\Users\dahl1320\VS_Community\ConsoleApplication1\factorial\x64\Debug\factorial.vcxproj.MdMergeInputs.cache
+C:\Users\dahl1320\VS_Community\ConsoleApplication1\factorial\x64\Debug\factorial.vcxproj.cppwinrt_plat.cache
+C:\Users\dahl1320\VS_Community\ConsoleApplication1\factorial\x64\Debug\factorial.vcxproj.cppwinrt_comp.cache
