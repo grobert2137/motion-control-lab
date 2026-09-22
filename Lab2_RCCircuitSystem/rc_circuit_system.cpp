@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <math.h> // for pow()
+#include "../matlab_export.h"
 
 int main() {
 	double r = 5000.0; // ohms
@@ -10,8 +11,11 @@ int main() {
 	double t = 0.0; // starting time step
 	double dt = 0.5; // time step
 
+	MatlabExport out("RCCCircut_ouput.csv"); // create MatlabExport object
+
 	while (t <= 5.0) {
 		printf("\n%lf", Vc);
+		out.write({ t, Vc }); // needed for Matlab export 
 		Vc = (dt / (r * c)) * (VDC - Vc) + Vc;
 		t += dt;
 	}

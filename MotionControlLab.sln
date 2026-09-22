@@ -25,6 +25,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lab-1", "Lab-1", "{02EA681E
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lab-2", "Lab-2", "{561ACCBB-DE16-4110-88AB-D298574378C9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Helpers", "Helpers", "{8B828227-AC07-462F-9549-DF1911DA2E97}"
+	ProjectSection(SolutionItems) = preProject
+		helpers.c = helpers.c
+		helpers.h = helpers.h
+		matlab_export.h = matlab_export.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
