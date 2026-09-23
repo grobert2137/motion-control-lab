@@ -4,14 +4,14 @@
 #include "../matlab_export.h"
 
 int main() {
-	double r = 5000.0; // ohms
+	double r =5000.0; // ohms
 	double c = 0.0001; // farad
 	double VDC = 0.5; // Volts
 	double Vc = 0.0; // initialize to 0
 	double t = 0.0; // starting time step
 	double dt = 0.5; // time step
 
-	MatlabExport out("RCCCircut_ouput.csv"); // create MatlabExport object
+	MatlabExport out("RC_Circut_output_b2.csv", "t, Vc"); // create MatlabExport object
 
 	while (t <= 5.0) {
 		printf("\n%lf", Vc);
