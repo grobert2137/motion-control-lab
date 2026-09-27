@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Repos\\motion-control-lab\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BB48A415-712F-4CDB-B2E5-62C6E9C77771}|Lab2_DebuggingPractice\\Lab2_DebuggingPractice.vcxproj|C:\\Repos\\motion-control-lab\\Lab2_DebuggingPractice\\debugging_practice.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BB48A415-712F-4CDB-B2E5-62C6E9C77771}|Lab2_DebuggingPractice\\Lab2_DebuggingPractice.vcxproj|solutionrelative:Lab2_DebuggingPractice\\debugging_practice.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{ECD9E58E-91FA-4850-A94B-C854FC114458}|Lab2_RCCircuitSystem\\Lab2_RCCircuitSystem.vcxproj|C:\\Repos\\motion-control-lab\\Lab2_RCCircuitSystem\\rc_circuit_system.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{ECD9E58E-91FA-4850-A94B-C854FC114458}|Lab2_RCCircuitSystem\\Lab2_RCCircuitSystem.vcxproj|solutionrelative:Lab2_RCCircuitSystem\\rc_circuit_system.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -23,6 +27,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "debugging_practice.cpp",
+              "DocumentMoniker": "C:\\Repos\\motion-control-lab\\Lab2_DebuggingPractice\\debugging_practice.cpp",
+              "RelativeDocumentMoniker": "Lab2_DebuggingPractice\\debugging_practice.cpp",
+              "ToolTip": "C:\\Repos\\motion-control-lab\\Lab2_DebuggingPractice\\debugging_practice.cpp",
+              "RelativeToolTip": "Lab2_DebuggingPractice\\debugging_practice.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-09-27T01:20:26.566Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "rc_circuit_system.cpp",
               "DocumentMoniker": "C:\\Repos\\motion-control-lab\\Lab2_RCCircuitSystem\\rc_circuit_system.cpp",
               "RelativeDocumentMoniker": "Lab2_RCCircuitSystem\\rc_circuit_system.cpp",
@@ -35,7 +52,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "matlab_export.h",
               "DocumentMoniker": "C:\\Repos\\motion-control-lab\\matlab_export.h",
               "RelativeDocumentMoniker": "matlab_export.h",
@@ -43,8 +60,7 @@
               "RelativeToolTip": "matlab_export.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABSAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-09-22T20:37:35.624Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-22T20:37:35.624Z"
             }
           ]
         }

@@ -26,8 +26,8 @@
               "Title": "rc_circuit_system.cpp",
               "DocumentMoniker": "C:\\Repos\\motion-control-lab\\Lab2_RCCircuitSystem\\rc_circuit_system.cpp",
               "RelativeDocumentMoniker": "Lab2_RCCircuitSystem\\rc_circuit_system.cpp",
-              "ToolTip": "C:\\Repos\\motion-control-lab\\Lab2_RCCircuitSystem\\rc_circuit_system.cpp*",
-              "RelativeToolTip": "Lab2_RCCircuitSystem\\rc_circuit_system.cpp*",
+              "ToolTip": "C:\\Repos\\motion-control-lab\\Lab2_RCCircuitSystem\\rc_circuit_system.cpp",
+              "RelativeToolTip": "Lab2_RCCircuitSystem\\rc_circuit_system.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-09-22T21:00:41.63Z",
@@ -43,8 +43,7 @@
               "RelativeToolTip": "matlab_export.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABSAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-09-22T20:37:35.624Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-22T20:37:35.624Z"
             }
           ]
         }
