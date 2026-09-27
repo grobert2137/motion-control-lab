@@ -18,5 +18,11 @@
     <ClCompile Include="dac.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\myWin826.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\RealTime.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

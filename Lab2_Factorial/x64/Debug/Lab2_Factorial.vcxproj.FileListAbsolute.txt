@@ -1,0 +1,3 @@
+C:\Repos\motion-control-lab\Lab2_Factorial\x64\Debug\Lab2_Factorial.vcxproj.MdMergeInputs.cache
+C:\Repos\motion-control-lab\Lab2_Factorial\x64\Debug\Lab2_Factorial.vcxproj.cppwinrt_plat.cache
+C:\Repos\motion-control-lab\Lab2_Factorial\x64\Debug\Lab2_Factorial.vcxproj.cppwinrt_comp.cache

@@ -1,0 +1,8 @@
+﻿  adc.cpp
+adc.obj : error LNK2019: unresolved external symbol S826_SystemOpen referenced in function main
+adc.obj : error LNK2019: unresolved external symbol S826_SystemClose referenced in function main
+adc.obj : error LNK2019: unresolved external symbol S826_AdcEnableWrite referenced in function main
+adc.obj : error LNK2019: unresolved external symbol S826_AdcSlotConfigWrite referenced in function main
+adc.obj : error LNK2019: unresolved external symbol S826_AdcSlotlistWrite referenced in function main
+adc.obj : error LNK2019: unresolved external symbol "int __cdecl AdcReadSlot(unsigned int,unsigned int,int *)" (?AdcReadSlot@@YAHIIPEAH@Z) referenced in function main
+C:\Repos\motion-control-lab\x64\Debug\Lab3_ADC.exe : fatal error LNK1120: 6 unresolved externals

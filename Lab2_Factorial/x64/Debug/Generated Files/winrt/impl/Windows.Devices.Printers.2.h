@@ -65,7 +65,7 @@ WINRT_EXPORT namespace winrt::Windows::Devices::Printers
         IppIntegerRange(int32_t start, int32_t end);
     };
     struct __declspec(empty_bases) IppPrintDevice : winrt::Windows::Devices::Printers::IIppPrintDevice,
-        impl::require<IppPrintDevice, winrt::Windows::Devices::Printers::IIppPrintDevice2>
+        impl::require<IppPrintDevice, winrt::Windows::Devices::Printers::IIppPrintDevice2, winrt::Windows::Devices::Printers::IIppPrintDevice3, winrt::Windows::Devices::Printers::IIppPrintDevice4, winrt::Windows::Devices::Printers::IIppPrintDevice5>
     {
         IppPrintDevice(std::nullptr_t) noexcept {}
         IppPrintDevice(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Devices::Printers::IIppPrintDevice(ptr, take_ownership_from_abi) {}
@@ -73,6 +73,17 @@ WINRT_EXPORT namespace winrt::Windows::Devices::Printers
         static auto FromId(param::hstring const& deviceId);
         static auto FromPrinterName(param::hstring const& printerName);
         static auto IsIppPrinter(param::hstring const& printerName);
+    };
+    struct __declspec(empty_bases) IppPrintDeviceInstallationResult : winrt::Windows::Devices::Printers::IIppPrintDeviceInstallationResult
+    {
+        IppPrintDeviceInstallationResult(std::nullptr_t) noexcept {}
+        IppPrintDeviceInstallationResult(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Devices::Printers::IIppPrintDeviceInstallationResult(ptr, take_ownership_from_abi) {}
+    };
+    struct IppPrintDeviceManager
+    {
+        IppPrintDeviceManager() = delete;
+        static auto CanInstallIppPrintDevice();
+        static auto InstallIppPrintDeviceAsync(winrt::Windows::Foundation::Uri const& printerUri, param::hstring const& printerName);
     };
     struct __declspec(empty_bases) IppResolution : winrt::Windows::Devices::Printers::IIppResolution
     {
@@ -119,6 +130,40 @@ WINRT_EXPORT namespace winrt::Windows::Devices::Printers
     {
         PrintSchema(std::nullptr_t) noexcept {}
         PrintSchema(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Devices::Printers::IPrintSchema(ptr, take_ownership_from_abi) {}
+    };
+    struct __declspec(empty_bases) ReplaceDevicePropertiesResult : winrt::Windows::Devices::Printers::IReplaceDevicePropertiesResult
+    {
+        ReplaceDevicePropertiesResult(std::nullptr_t) noexcept {}
+        ReplaceDevicePropertiesResult(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Devices::Printers::IReplaceDevicePropertiesResult(ptr, take_ownership_from_abi) {}
+    };
+    struct __declspec(empty_bases) VirtualPrinterInstallationParameters : winrt::Windows::Devices::Printers::IVirtualPrinterInstallationParameters
+    {
+        VirtualPrinterInstallationParameters(std::nullptr_t) noexcept {}
+        VirtualPrinterInstallationParameters(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Devices::Printers::IVirtualPrinterInstallationParameters(ptr, take_ownership_from_abi) {}
+        VirtualPrinterInstallationParameters();
+    };
+    struct __declspec(empty_bases) VirtualPrinterInstallationResult : winrt::Windows::Devices::Printers::IVirtualPrinterInstallationResult
+    {
+        VirtualPrinterInstallationResult(std::nullptr_t) noexcept {}
+        VirtualPrinterInstallationResult(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Devices::Printers::IVirtualPrinterInstallationResult(ptr, take_ownership_from_abi) {}
+    };
+    struct VirtualPrinterManager
+    {
+        VirtualPrinterManager() = delete;
+        static auto InstallVirtualPrinterAsync(winrt::Windows::Devices::Printers::VirtualPrinterInstallationParameters const& parameters);
+        static auto InstallVirtualPrinterAsync(winrt::Windows::Devices::Printers::VirtualPrinterInstallationParameters const& parameters, param::hstring const& appPackageFamilyName);
+        static auto InstallVirtualPrinterForAllUsersAsync(winrt::Windows::Devices::Printers::VirtualPrinterInstallationParameters const& parameters);
+        static auto InstallVirtualPrinterForAllUsersAsync(winrt::Windows::Devices::Printers::VirtualPrinterInstallationParameters const& parameters, param::hstring const& appPackageFamilyName);
+        static auto FindAllVirtualPrinters();
+        static auto FindAllVirtualPrinters(param::hstring const& appPackageFamilyName);
+        static auto RemoveVirtualPrinterAsync(param::hstring const& printerName);
+        static auto RemoveVirtualPrinterForAllUsersAsync(param::hstring const& printerName);
+    };
+    struct __declspec(empty_bases) VirtualPrinterSupportedFormat : winrt::Windows::Devices::Printers::IVirtualPrinterSupportedFormat
+    {
+        VirtualPrinterSupportedFormat(std::nullptr_t) noexcept {}
+        VirtualPrinterSupportedFormat(void* ptr, take_ownership_from_abi_t) noexcept : winrt::Windows::Devices::Printers::IVirtualPrinterSupportedFormat(ptr, take_ownership_from_abi) {}
+        VirtualPrinterSupportedFormat(param::hstring const& contentType, param::hstring const& maxSupportedVersion);
     };
 }
 #endif

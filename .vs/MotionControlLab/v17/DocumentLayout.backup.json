@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Repos\\motion-control-lab\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9FC1BF7D-55F4-4016-9B48-28E0DA3106A7}|_Resources{9FC1BF7D-55F4-4016-9B48-28E0DA3106A7}|C:\\Repos\\motion-control-lab\\notes.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{9FC1BF7D-55F4-4016-9B48-28E0DA3106A7}|_Resources{9FC1BF7D-55F4-4016-9B48-28E0DA3106A7}|solutionrelative:notes.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9B61C64D-C120-43D7-A8EC-6EB854DABE7E}|Lab3_SineIO\\Lab3_SineIO.vcxproj|C:\\Repos\\motion-control-lab\\Lab3_SineIO\\sineIO.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{9B61C64D-C120-43D7-A8EC-6EB854DABE7E}|Lab3_SineIO\\Lab3_SineIO.vcxproj|solutionrelative:Lab3_SineIO\\sineIO.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -15,26 +19,6 @@
       "RelativeMoniker": "D:0:0:{50F5E743-BCFF-4E86-B643-A853D340774D}|Lab3_ADC\\Lab3_ADC.vcxproj|solutionrelative:Lab3_ADC\\adc.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D474CFDB-1A0F-4DF0-A657-BBE7CC8508DE}|NewFolder1{D474CFDB-1A0F-4DF0-A657-BBE7CC8508DE}|C:\\Repos\\motion-control-lab\\myWin826.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D474CFDB-1A0F-4DF0-A657-BBE7CC8508DE}|NewFolder1{D474CFDB-1A0F-4DF0-A657-BBE7CC8508DE}|solutionrelative:myWin826.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D474CFDB-1A0F-4DF0-A657-BBE7CC8508DE}|NewFolder1{D474CFDB-1A0F-4DF0-A657-BBE7CC8508DE}|C:\\Repos\\motion-control-lab\\826api.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D474CFDB-1A0F-4DF0-A657-BBE7CC8508DE}|NewFolder1{D474CFDB-1A0F-4DF0-A657-BBE7CC8508DE}|solutionrelative:826api.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D474CFDB-1A0F-4DF0-A657-BBE7CC8508DE}|NewFolder1{D474CFDB-1A0F-4DF0-A657-BBE7CC8508DE}|C:\\Repos\\motion-control-lab\\RealTime.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D474CFDB-1A0F-4DF0-A657-BBE7CC8508DE}|NewFolder1{D474CFDB-1A0F-4DF0-A657-BBE7CC8508DE}|solutionrelative:RealTime.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D474CFDB-1A0F-4DF0-A657-BBE7CC8508DE}|NewFolder1{D474CFDB-1A0F-4DF0-A657-BBE7CC8508DE}|C:\\Repos\\motion-control-lab\\RealTime.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D474CFDB-1A0F-4DF0-A657-BBE7CC8508DE}|NewFolder1{D474CFDB-1A0F-4DF0-A657-BBE7CC8508DE}|solutionrelative:RealTime.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D474CFDB-1A0F-4DF0-A657-BBE7CC8508DE}|NewFolder1{D474CFDB-1A0F-4DF0-A657-BBE7CC8508DE}|C:\\Repos\\motion-control-lab\\myWin826.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D474CFDB-1A0F-4DF0-A657-BBE7CC8508DE}|NewFolder1{D474CFDB-1A0F-4DF0-A657-BBE7CC8508DE}|solutionrelative:myWin826.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BB48A415-712F-4CDB-B2E5-62C6E9C77771}|Lab2_DebuggingPractice\\Lab2_DebuggingPractice.vcxproj|C:\\Repos\\motion-control-lab\\Lab2_DebuggingPractice\\debugging_practice.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{BB48A415-712F-4CDB-B2E5-62C6E9C77771}|Lab2_DebuggingPractice\\Lab2_DebuggingPractice.vcxproj|solutionrelative:Lab2_DebuggingPractice\\debugging_practice.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -45,6 +29,22 @@
     {
       "AbsoluteMoniker": "D:0:0:{8B828227-AC07-462F-9549-DF1911DA2E97}|Helpers{8B828227-AC07-462F-9549-DF1911DA2E97}|C:\\Repos\\motion-control-lab\\matlab_export.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{8B828227-AC07-462F-9549-DF1911DA2E97}|Helpers{8B828227-AC07-462F-9549-DF1911DA2E97}|solutionrelative:matlab_export.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D474CFDB-1A0F-4DF0-A657-BBE7CC8508DE}|Sensory Dependancies{D474CFDB-1A0F-4DF0-A657-BBE7CC8508DE}|C:\\Repos\\motion-control-lab\\RealTime.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D474CFDB-1A0F-4DF0-A657-BBE7CC8508DE}|Sensory Dependancies{D474CFDB-1A0F-4DF0-A657-BBE7CC8508DE}|solutionrelative:RealTime.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D474CFDB-1A0F-4DF0-A657-BBE7CC8508DE}|Sensory Dependancies{D474CFDB-1A0F-4DF0-A657-BBE7CC8508DE}|C:\\Repos\\motion-control-lab\\RealTime.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D474CFDB-1A0F-4DF0-A657-BBE7CC8508DE}|Sensory Dependancies{D474CFDB-1A0F-4DF0-A657-BBE7CC8508DE}|solutionrelative:RealTime.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D474CFDB-1A0F-4DF0-A657-BBE7CC8508DE}|Sensory Dependancies{D474CFDB-1A0F-4DF0-A657-BBE7CC8508DE}|C:\\Repos\\motion-control-lab\\myWin826.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D474CFDB-1A0F-4DF0-A657-BBE7CC8508DE}|Sensory Dependancies{D474CFDB-1A0F-4DF0-A657-BBE7CC8508DE}|solutionrelative:myWin826.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D474CFDB-1A0F-4DF0-A657-BBE7CC8508DE}|Sensory Dependancies{D474CFDB-1A0F-4DF0-A657-BBE7CC8508DE}|C:\\Repos\\motion-control-lab\\826api.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D474CFDB-1A0F-4DF0-A657-BBE7CC8508DE}|Sensory Dependancies{D474CFDB-1A0F-4DF0-A657-BBE7CC8508DE}|solutionrelative:826api.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,11 +54,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
+              "Title": "notes.md",
+              "DocumentMoniker": "C:\\Repos\\motion-control-lab\\notes.md",
+              "RelativeDocumentMoniker": "notes.md",
+              "ToolTip": "C:\\Repos\\motion-control-lab\\notes.md",
+              "RelativeToolTip": "notes.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-09-27T16:26:58.082Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "RealTime.cpp",
               "DocumentMoniker": "C:\\Repos\\motion-control-lab\\RealTime.cpp",
               "RelativeDocumentMoniker": "RealTime.cpp",
@@ -66,12 +79,11 @@
               "RelativeToolTip": "RealTime.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-09-27T01:45:10.384Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-27T01:45:10.384Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "RealTime.h",
               "DocumentMoniker": "C:\\Repos\\motion-control-lab\\RealTime.h",
               "RelativeDocumentMoniker": "RealTime.h",
@@ -79,25 +91,11 @@
               "RelativeToolTip": "RealTime.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-09-27T01:45:01.932Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-27T01:45:01.932Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "myWin826.cpp",
-              "DocumentMoniker": "C:\\Repos\\motion-control-lab\\myWin826.cpp",
-              "RelativeDocumentMoniker": "myWin826.cpp",
-              "ToolTip": "C:\\Repos\\motion-control-lab\\myWin826.cpp",
-              "RelativeToolTip": "myWin826.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-09-27T01:44:34.447Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "myWin826.h",
               "DocumentMoniker": "C:\\Repos\\motion-control-lab\\myWin826.h",
               "RelativeDocumentMoniker": "myWin826.h",
@@ -105,12 +103,11 @@
               "RelativeToolTip": "myWin826.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-09-27T01:44:08.542Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-27T01:44:08.542Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "826api.h",
               "DocumentMoniker": "C:\\Repos\\motion-control-lab\\826api.h",
               "RelativeDocumentMoniker": "826api.h",
@@ -118,25 +115,24 @@
               "RelativeToolTip": "826api.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACIBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-09-27T01:43:46.859Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-27T01:43:46.859Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "sineIO.cpp",
               "DocumentMoniker": "C:\\Repos\\motion-control-lab\\Lab3_SineIO\\sineIO.cpp",
               "RelativeDocumentMoniker": "Lab3_SineIO\\sineIO.cpp",
               "ToolTip": "C:\\Repos\\motion-control-lab\\Lab3_SineIO\\sineIO.cpp",
               "RelativeToolTip": "Lab3_SineIO\\sineIO.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFUAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-09-27T01:39:15.876Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "adc.cpp",
               "DocumentMoniker": "C:\\Repos\\motion-control-lab\\Lab3_ADC\\adc.cpp",
               "RelativeDocumentMoniker": "Lab3_ADC\\adc.cpp",
@@ -144,12 +140,11 @@
               "RelativeToolTip": "Lab3_ADC\\adc.cpp",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAAYAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-09-27T01:38:27.552Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-27T01:38:27.552Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "dac.cpp",
               "DocumentMoniker": "C:\\Repos\\motion-control-lab\\Lab3_DAC\\dac.cpp",
               "RelativeDocumentMoniker": "Lab3_DAC\\dac.cpp",
@@ -157,12 +152,11 @@
               "RelativeToolTip": "Lab3_DAC\\dac.cpp",
               "ViewState": "AgIAACcAAAAAAAAAAAAAABkAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-09-27T01:36:42.512Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-27T01:36:42.512Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 4,
               "Title": "debugging_practice.cpp",
               "DocumentMoniker": "C:\\Repos\\motion-control-lab\\Lab2_DebuggingPractice\\debugging_practice.cpp",
               "RelativeDocumentMoniker": "Lab2_DebuggingPractice\\debugging_practice.cpp",
@@ -170,12 +164,11 @@
               "RelativeToolTip": "Lab2_DebuggingPractice\\debugging_practice.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-09-27T01:20:26.566Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-27T01:20:26.566Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 5,
               "Title": "rc_circuit_system.cpp",
               "DocumentMoniker": "C:\\Repos\\motion-control-lab\\Lab2_RCCircuitSystem\\rc_circuit_system.cpp",
               "RelativeDocumentMoniker": "Lab2_RCCircuitSystem\\rc_circuit_system.cpp",
@@ -187,7 +180,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 6,
               "Title": "matlab_export.h",
               "DocumentMoniker": "C:\\Repos\\motion-control-lab\\matlab_export.h",
               "RelativeDocumentMoniker": "matlab_export.h",

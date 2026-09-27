@@ -25,7 +25,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lab-1", "Lab-1", "{02EA681E
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lab-2", "Lab-2", "{561ACCBB-DE16-4110-88AB-D298574378C9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Helpers", "Helpers", "{8B828227-AC07-462F-9549-DF1911DA2E97}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Helpers", "_Helpers", "{8B828227-AC07-462F-9549-DF1911DA2E97}"
 	ProjectSection(SolutionItems) = preProject
 		helpers.c = helpers.c
 		helpers.h = helpers.h
@@ -40,13 +40,18 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lab3_ADC", "Lab3_ADC\Lab3_A
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lab3_SineIO", "Lab3_SineIO\Lab3_SineIO.vcxproj", "{9B61C64D-C120-43D7-A8EC-6EB854DABE7E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sensory Dependancies", "Sensory Dependancies", "{D474CFDB-1A0F-4DF0-A657-BBE7CC8508DE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Sensoray Dependancies", "_Sensoray Dependancies", "{D474CFDB-1A0F-4DF0-A657-BBE7CC8508DE}"
 	ProjectSection(SolutionItems) = preProject
 		826api.h = 826api.h
 		myWin826.cpp = myWin826.cpp
 		myWin826.h = myWin826.h
 		RealTime.cpp = RealTime.cpp
 		RealTime.h = RealTime.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Resources", "_Resources", "{9FC1BF7D-55F4-4016-9B48-28E0DA3106A7}"
+	ProjectSection(SolutionItems) = preProject
+		notes.md = notes.md
 	EndProjectSection
 EndProject
 Global

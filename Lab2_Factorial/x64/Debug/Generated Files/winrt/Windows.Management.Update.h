@@ -52,6 +52,704 @@ namespace winrt::impl
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IPreviewBuildsState)->get_Properties(&value));
         return winrt::Windows::Foundation::Collections::ValueSet{ value, take_ownership_from_abi };
     }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdate<D>::InstallationType() const
+    {
+        winrt::Windows::Management::Update::WindowsSoftwareUpdateInstallationType value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdate)->get_InstallationType(reinterpret_cast<int32_t*>(&value)));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdate<D>::ProviderId() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdate)->get_ProviderId(&value));
+        return hstring{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdate<D>::UpdateId() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdate)->get_UpdateId(&value));
+        return hstring{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdate<D>::Title() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdate)->get_Title(&value));
+        return hstring{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdate<D>::Description() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdate)->get_Description(&value));
+        return hstring{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdate<D>::MoreInfoUrl() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdate)->get_MoreInfoUrl(&value));
+        return winrt::Windows::Foundation::Uri{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdate<D>::DownloadSizeInBytes() const
+    {
+        uint64_t value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdate)->get_DownloadSizeInBytes(&value));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdate<D>::InstallSizeInBytes() const
+    {
+        uint64_t value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdate)->get_InstallSizeInBytes(&value));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdate<D>::SourceVersion() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdate)->get_SourceVersion(&value));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateVersion{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdate<D>::TargetVersion() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdate)->get_TargetVersion(&value));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateVersion{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdate<D>::ProductCode() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdate)->get_ProductCode(&value));
+        return winrt::Windows::Foundation::IReference<winrt::guid>{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdate<D>::PackageFamilyName() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdate)->get_PackageFamilyName(&value));
+        return hstring{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdate<D>::Approve(winrt::Windows::Management::Update::WindowsSoftwareUpdateApprovalInfo const& approvalInfo) const
+    {
+        void* result{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdate)->Approve(*(void**)(&approvalInfo), &result));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateResult{ result, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdate<D>::ApproveCurrentAction(bool approve) const
+    {
+        void* result{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdate)->ApproveCurrentAction(approve, &result));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateResult{ result, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdate<D>::CurrentAction() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdate)->get_CurrentAction(&value));
+        return hstring{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdate<D>::ActionResultInfo() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdate)->get_ActionResultInfo(&value));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateActionResultInfo{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdate<D>::ApprovalInfo() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdate)->get_ApprovalInfo(&value));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateApprovalInfo{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdate<D>::ApprovedActions() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdate)->get_ApprovedActions(&value));
+        return winrt::Windows::Foundation::Collections::IVectorView<winrt::Windows::Management::Update::WindowsSoftwareUpdateActionType>{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdate<D>::AttentionRequiredInfo() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdate)->get_AttentionRequiredInfo(&value));
+        return winrt::Windows::Management::Update::WindowsUpdateAttentionRequiredInfo{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdate<D>::ActionProgress() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdate)->get_ActionProgress(&value));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateActionProgress{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdate<D>::RestartReason() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdate)->get_RestartReason(&value));
+        return winrt::Windows::Foundation::IReference<winrt::Windows::Management::Update::WindowsSoftwareUpdateRestartReason>{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdate<D>::AppPackageInfo() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdate)->get_AppPackageInfo(&value));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateAppPackageInfo{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdate<D>::ExecutionInfo() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdate)->get_ExecutionInfo(&value));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateExecutionInfo{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdate<D>::OptionalInfo() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdate)->get_OptionalInfo(&value));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateOptionalInfo{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateActionInfo<D>::FileName() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateActionInfo)->get_FileName(&value));
+        return hstring{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateActionInfo<D>::FileArguments() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateActionInfo)->get_FileArguments(&value));
+        return hstring{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateActionInfo<D>::ActionType() const
+    {
+        winrt::Windows::Management::Update::WindowsSoftwareUpdateActionType value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateActionInfo)->get_ActionType(reinterpret_cast<int32_t*>(&value)));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateActionInfoFactory<D>::CreateInstance(param::hstring const& fileName, param::hstring const& fileArguments, winrt::Windows::Management::Update::WindowsSoftwareUpdateActionType const& actionType) const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateActionInfoFactory)->CreateInstance(*(void**)(&fileName), *(void**)(&fileArguments), static_cast<int32_t>(actionType), &value));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateActionInfo{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateActionProgress<D>::Action() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateActionProgress)->get_Action(&value));
+        return hstring{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateActionProgress<D>::CurrentProgress() const
+    {
+        uint64_t value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateActionProgress)->get_CurrentProgress(&value));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateActionProgress<D>::TotalProgress() const
+    {
+        uint64_t value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateActionProgress)->get_TotalProgress(&value));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateActionResultInfo<D>::Timestamp() const
+    {
+        winrt::Windows::Foundation::DateTime value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateActionResultInfo)->get_Timestamp(put_abi(value)));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateActionResultInfo<D>::Succeeded() const
+    {
+        bool value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateActionResultInfo)->get_Succeeded(&value));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateActionResultInfo<D>::ResultCode() const
+    {
+        uint32_t value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateActionResultInfo)->get_ResultCode(&value));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateActionResultInfo<D>::ExtendedError() const
+    {
+        uint64_t value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateActionResultInfo)->get_ExtendedError(&value));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateActionResultInfo<D>::Action() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateActionResultInfo)->get_Action(&value));
+        return hstring{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateAppPackageInfo<D>::PackageFamilyName() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateAppPackageInfo)->get_PackageFamilyName(&value));
+        return hstring{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateAppPackageInfo<D>::PackageArchitecture() const
+    {
+        winrt::Windows::Management::Update::WindowsSoftwareUpdateArchitecture value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateAppPackageInfo)->get_PackageArchitecture(reinterpret_cast<int32_t*>(&value)));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateAppPackageInfo<D>::InstallUri() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateAppPackageInfo)->get_InstallUri(&value));
+        return winrt::Windows::Foundation::Uri{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateAppPackageInfoFactory<D>::CreateInstance(param::hstring const& packageFamilyName, winrt::Windows::Management::Update::WindowsSoftwareUpdateArchitecture const& packageArchitecture, winrt::Windows::Foundation::Uri const& installUri) const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateAppPackageInfoFactory)->CreateInstance(*(void**)(&packageFamilyName), static_cast<int32_t>(packageArchitecture), *(void**)(&installUri), &value));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateAppPackageInfo{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateApprovalInfo<D>::UserInitiated() const
+    {
+        bool value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateApprovalInfo)->get_UserInitiated(&value));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateApprovalInfo<D>::AppClosure() const
+    {
+        bool value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateApprovalInfo)->get_AppClosure(&value));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateApprovalInfo<D>::MeteredNetwork() const
+    {
+        bool value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateApprovalInfo)->get_MeteredNetwork(&value));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateApprovalInfo<D>::Seeker() const
+    {
+        bool value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateApprovalInfo)->get_Seeker(&value));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateApprovalInfoFactory<D>::CreateInstance(bool userInitiated, bool appClosure, bool meteredNetwork, bool seeker) const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateApprovalInfoFactory)->CreateInstance(userInitiated, appClosure, meteredNetwork, seeker, &value));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateApprovalInfo{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateExecutionInfo<D>::DownloadInfo() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateExecutionInfo)->get_DownloadInfo(&value));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateActionInfo{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateExecutionInfo<D>::InstallInfo() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateExecutionInfo)->get_InstallInfo(&value));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateActionInfo{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateExecutionInfo<D>::DeployInfo() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateExecutionInfo)->get_DeployInfo(&value));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateActionInfo{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateExecutionInfo<D>::OptionalActionInfo() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateExecutionInfo)->get_OptionalActionInfo(&value));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateOptionalActionInfo{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateExecutionInfoFactory<D>::CreateInstance(winrt::Windows::Management::Update::WindowsSoftwareUpdateActionInfo const& downloadInfo, winrt::Windows::Management::Update::WindowsSoftwareUpdateActionInfo const& installInfo, winrt::Windows::Management::Update::WindowsSoftwareUpdateOptionalActionInfo const& actions) const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateExecutionInfoFactory)->CreateInstance(*(void**)(&downloadInfo), *(void**)(&installInfo), *(void**)(&actions), &value));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateExecutionInfo{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateExecutionInfoFactory<D>::CreateInstance2(winrt::Windows::Management::Update::WindowsSoftwareUpdateActionInfo const& deployInfo, winrt::Windows::Management::Update::WindowsSoftwareUpdateOptionalActionInfo const& actions) const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateExecutionInfoFactory)->CreateInstance2(*(void**)(&deployInfo), *(void**)(&actions), &value));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateExecutionInfo{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateFactory<D>::CreateInstance(param::hstring const& providerId, winrt::Windows::Management::Update::WindowsSoftwareUpdateInstallationType const& installationType, param::hstring const& updateId, param::hstring const& title, param::hstring const& description, winrt::Windows::Foundation::Uri const& moreInfoUrl, uint64_t downloadSizeInBytes, uint64_t installSizeInBytes, winrt::Windows::Management::Update::WindowsSoftwareUpdateVersion const& sourceVersion, winrt::Windows::Management::Update::WindowsSoftwareUpdateVersion const& targetVersion, winrt::Windows::Management::Update::WindowsSoftwareUpdateAppPackageInfo const& appPackageInfo, winrt::Windows::Management::Update::WindowsSoftwareUpdateExecutionInfo const& executionInfo, winrt::Windows::Management::Update::WindowsSoftwareUpdateOptionalInfo const& optionalInfo) const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateFactory)->CreateInstance(*(void**)(&providerId), static_cast<int32_t>(installationType), *(void**)(&updateId), *(void**)(&title), *(void**)(&description), *(void**)(&moreInfoUrl), downloadSizeInBytes, installSizeInBytes, *(void**)(&sourceVersion), *(void**)(&targetVersion), *(void**)(&appPackageInfo), *(void**)(&executionInfo), *(void**)(&optionalInfo), &value));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdate{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateFactory<D>::CreateInstance2(param::hstring const& providerId, winrt::Windows::Management::Update::WindowsSoftwareUpdateInstallationType const& installationType, param::hstring const& updateId, param::hstring const& title, param::hstring const& description, winrt::Windows::Foundation::Uri const& moreInfoUrl, uint64_t downloadSizeInBytes, uint64_t installSizeInBytes, winrt::Windows::Foundation::IReference<winrt::guid> const& productCode, param::hstring const& packageFamilyName, winrt::Windows::Management::Update::WindowsSoftwareUpdateVersion const& sourceVersion, winrt::Windows::Management::Update::WindowsSoftwareUpdateVersion const& targetVersion, winrt::Windows::Management::Update::WindowsSoftwareUpdateAppPackageInfo const& appPackageInfo, winrt::Windows::Management::Update::WindowsSoftwareUpdateExecutionInfo const& executionInfo, winrt::Windows::Management::Update::WindowsSoftwareUpdateOptionalInfo const& optionalInfo) const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateFactory)->CreateInstance2(*(void**)(&providerId), static_cast<int32_t>(installationType), *(void**)(&updateId), *(void**)(&title), *(void**)(&description), *(void**)(&moreInfoUrl), downloadSizeInBytes, installSizeInBytes, *(void**)(&productCode), *(void**)(&packageFamilyName), *(void**)(&sourceVersion), *(void**)(&targetVersion), *(void**)(&appPackageInfo), *(void**)(&executionInfo), *(void**)(&optionalInfo), &value));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdate{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateLocalizationInfo<D>::LanguageId() const
+    {
+        uint32_t value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateLocalizationInfo)->get_LanguageId(&value));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateLocalizationInfo<D>::Title() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateLocalizationInfo)->get_Title(&value));
+        return hstring{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateLocalizationInfo<D>::Description() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateLocalizationInfo)->get_Description(&value));
+        return hstring{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateLocalizationInfo<D>::MoreInfoUrl() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateLocalizationInfo)->get_MoreInfoUrl(&value));
+        return winrt::Windows::Foundation::Uri{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateLocalizationInfoFactory<D>::CreateInstance(uint32_t languageId, param::hstring const& title, param::hstring const& description, winrt::Windows::Foundation::Uri const& moreInfoUrl) const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateLocalizationInfoFactory)->CreateInstance(languageId, *(void**)(&title), *(void**)(&description), *(void**)(&moreInfoUrl), &value));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateLocalizationInfo{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateOptionalActionInfo<D>::CloseAndDeployInfo() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateOptionalActionInfo)->get_CloseAndDeployInfo(&value));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateActionInfo{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateOptionalActionInfo<D>::CloseAndInstallInfo() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateOptionalActionInfo)->get_CloseAndInstallInfo(&value));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateActionInfo{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateOptionalActionInfo<D>::CloseAndRestartInfo() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateOptionalActionInfo)->get_CloseAndRestartInfo(&value));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateActionInfo{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateOptionalActionInfoFactory<D>::CreateInstance(winrt::Windows::Management::Update::WindowsSoftwareUpdateActionInfo const& closeAndDeployInfo, winrt::Windows::Management::Update::WindowsSoftwareUpdateActionInfo const& closeAndInstallInfo, winrt::Windows::Management::Update::WindowsSoftwareUpdateActionInfo const& closeAndRestartInfo) const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateOptionalActionInfoFactory)->CreateInstance(*(void**)(&closeAndDeployInfo), *(void**)(&closeAndInstallInfo), *(void**)(&closeAndRestartInfo), &value));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateOptionalActionInfo{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateOptionalInfo<D>::LocalizationInfo() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateOptionalInfo)->get_LocalizationInfo(&value));
+        return winrt::Windows::Foundation::Collections::IVectorView<winrt::Windows::Management::Update::WindowsSoftwareUpdateLocalizationInfo>{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateOptionalInfo<D>::ComplianceDeadlineInDays() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateOptionalInfo)->get_ComplianceDeadlineInDays(&value));
+        return winrt::Windows::Foundation::IReference<int32_t>{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateOptionalInfo<D>::ComplianceGracePeriodInDays() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateOptionalInfo)->get_ComplianceGracePeriodInDays(&value));
+        return winrt::Windows::Foundation::IReference<int32_t>{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateOptionalInfoFactory<D>::CreateInstance(winrt::Windows::Foundation::IReference<int32_t> const& complianceDeadlineInDays, winrt::Windows::Foundation::IReference<int32_t> const& complianceGracePeriodInDays) const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateOptionalInfoFactory)->CreateInstance(*(void**)(&complianceDeadlineInDays), *(void**)(&complianceGracePeriodInDays), &value));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateOptionalInfo{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateOptionalInfoFactory<D>::CreateInstance2(param::iterable<winrt::Windows::Management::Update::WindowsSoftwareUpdateLocalizationInfo> const& localizationInfo, winrt::Windows::Foundation::IReference<int32_t> const& complianceDeadlineInDays, winrt::Windows::Foundation::IReference<int32_t> const& complianceGracePeriodInDays) const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateOptionalInfoFactory)->CreateInstance2(*(void**)(&localizationInfo), *(void**)(&complianceDeadlineInDays), *(void**)(&complianceGracePeriodInDays), &value));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateOptionalInfo{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateProvider<D>::Register() const
+    {
+        void* result{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateProvider)->Register(&result));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateResult{ result, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateProvider<D>::Unregister() const
+    {
+        void* result{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateProvider)->Unregister(&result));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateResult{ result, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateProvider<D>::Validate() const
+    {
+        void* result{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateProvider)->Validate(&result));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateResult{ result, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateProvider<D>::Id() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateProvider)->get_Id(&value));
+        return hstring{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateProvider<D>::Version() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateProvider)->get_Version(&value));
+        return hstring{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateProvider<D>::FolderPath() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateProvider)->get_FolderPath(&value));
+        return hstring{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateProvider<D>::CatalogFile() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateProvider)->get_CatalogFile(&value));
+        return hstring{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateProvider<D>::ScanFileName() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateProvider)->get_ScanFileName(&value));
+        return hstring{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateProvider<D>::ScanFileArguments() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateProvider)->get_ScanFileArguments(&value));
+        return hstring{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateProvider<D>::Type() const
+    {
+        winrt::Windows::Management::Update::WindowsSoftwareUpdateProviderType value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateProvider)->get_Type(reinterpret_cast<int32_t*>(&value)));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateProvider<D>::PayloadFiles() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateProvider)->get_PayloadFiles(&value));
+        return winrt::Windows::Foundation::Collections::IVectorView<winrt::Windows::Management::Update::WindowsSoftwareUpdateProviderPayloadFileInfo>{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateProvider<D>::TrustState() const
+    {
+        winrt::Windows::Management::Update::WindowsSoftwareUpdateProviderTrustState value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateProvider)->get_TrustState(reinterpret_cast<int32_t*>(&value)));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateProvider<D>::RegistrationType() const
+    {
+        winrt::Windows::Management::Update::WindowsSoftwareUpdateProviderRegistrationType value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateProvider)->get_RegistrationType(reinterpret_cast<int32_t*>(&value)));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateProvider<D>::Properties() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateProvider)->get_Properties(&value));
+        return winrt::Windows::Foundation::Collections::PropertySet{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateProvider<D>::GetPropertyValue(param::hstring const& name) const
+    {
+        void* result{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateProvider)->GetPropertyValue(*(void**)(&name), &result));
+        return winrt::Windows::Foundation::IInspectable{ result, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateProviderActionResult<D>::Result() const
+    {
+        winrt::Windows::Management::Update::WindowsSoftwareUpdateActionResult value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateProviderActionResult)->get_Result(reinterpret_cast<int32_t*>(&value)));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateProviderActionResult<D>::RestartReason() const
+    {
+        winrt::Windows::Management::Update::WindowsSoftwareUpdateRestartReason value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateProviderActionResult)->get_RestartReason(reinterpret_cast<int32_t*>(&value)));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateProviderActionResult<D>::ResultCode() const
+    {
+        uint32_t value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateProviderActionResult)->get_ResultCode(&value));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateProviderActionResult<D>::ExtendedError() const
+    {
+        uint64_t value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateProviderActionResult)->get_ExtendedError(&value));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateProviderActionResultFactory<D>::CreateInstance(winrt::Windows::Management::Update::WindowsSoftwareUpdateActionResult const& actionResult, winrt::Windows::Management::Update::WindowsSoftwareUpdateRestartReason const& restartReason, uint32_t resultCode, uint64_t extendedError) const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateProviderActionResultFactory)->CreateInstance(static_cast<int32_t>(actionResult), static_cast<int32_t>(restartReason), resultCode, extendedError, &value));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateProviderActionResult{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateProviderFactory<D>::CreateInstance(param::hstring const& folderPath) const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateProviderFactory)->CreateInstance(*(void**)(&folderPath), &value));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateProvider{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateProviderPayloadFileInfo<D>::Filename() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateProviderPayloadFileInfo)->get_Filename(&value));
+        return hstring{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateProviderPayloadFileInfo<D>::FileHash() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateProviderPayloadFileInfo)->get_FileHash(&value));
+        return hstring{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateProviderPayloadFileInfo<D>::CatalogFile() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateProviderPayloadFileInfo)->get_CatalogFile(&value));
+        return hstring{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateProviderPayloadFileInfo<D>::TrustState() const
+    {
+        winrt::Windows::Management::Update::WindowsSoftwareUpdateProviderTrustState value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateProviderPayloadFileInfo)->get_TrustState(reinterpret_cast<int32_t*>(&value)));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateProviderStatus<D>::CancelRequested(winrt::Windows::Foundation::TypedEventHandler<winrt::Windows::Management::Update::WindowsSoftwareUpdateProviderStatus, winrt::Windows::Foundation::IInspectable> const& handler) const
+    {
+        winrt::event_token token{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateProviderStatus)->add_CancelRequested(*(void**)(&handler), put_abi(token)));
+        return token;
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateProviderStatus<D>::CancelRequested(auto_revoke_t, winrt::Windows::Foundation::TypedEventHandler<winrt::Windows::Management::Update::WindowsSoftwareUpdateProviderStatus, winrt::Windows::Foundation::IInspectable> const& handler) const
+    {
+        return impl::make_event_revoker<D, CancelRequested_revoker>(this, CancelRequested(handler));
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateProviderStatus<D>::CancelRequested(winrt::event_token const& token) const noexcept
+    {
+        WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateProviderStatus)->remove_CancelRequested(impl::bind_in(token));
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateProviderStatus<D>::SetScanResult(bool succeeded, uint32_t resultCode, uint64_t extendedError, param::iterable<winrt::Windows::Management::Update::WindowsSoftwareUpdate> const& updates) const
+    {
+        void* result{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateProviderStatus)->SetScanResult(succeeded, resultCode, extendedError, *(void**)(&updates), &result));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateResult{ result, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateProviderStatus<D>::SetActionProgress(uint64_t current, uint64_t total) const
+    {
+        void* result{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateProviderStatus)->SetActionProgress(current, total, &result));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateResult{ result, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateProviderStatus<D>::SetActionResult(winrt::Windows::Management::Update::WindowsSoftwareUpdateProviderActionResult const& actionResult) const
+    {
+        void* result{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateProviderStatus)->SetActionResult(*(void**)(&actionResult), &result));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateResult{ result, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateProviderStatusFactory<D>::CreateInstance(param::hstring const& providerId) const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateProviderStatusFactory)->CreateInstance(*(void**)(&providerId), &value));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateProviderStatus{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateResult<D>::Succeeded() const
+    {
+        bool value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateResult)->get_Succeeded(&value));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateResult<D>::CancelRequested() const
+    {
+        bool value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateResult)->get_CancelRequested(&value));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateResult<D>::ResultCode() const
+    {
+        uint32_t value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateResult)->get_ResultCode(&value));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateResult<D>::ExtendedError() const
+    {
+        uint64_t value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateResult)->get_ExtendedError(&value));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateResultFactory<D>::CreateInstance(bool succeeded, uint32_t resultCode) const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateResultFactory)->CreateInstance(succeeded, resultCode, &value));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateResult{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateResultFactory<D>::CreateInstance2(bool succeeded, uint32_t resultCode, uint64_t extendedError) const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateResultFactory)->CreateInstance2(succeeded, resultCode, extendedError, &value));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateResult{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateResultFactory<D>::CreateInstance3(bool succeeded, bool cancelRequested, uint32_t resultCode, uint64_t extendedError) const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateResultFactory)->CreateInstance3(succeeded, cancelRequested, resultCode, extendedError, &value));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateResult{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateScanResult<D>::Succeeded() const
+    {
+        bool value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateScanResult)->get_Succeeded(&value));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateScanResult<D>::ResultCode() const
+    {
+        uint32_t value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateScanResult)->get_ResultCode(&value));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateScanResult<D>::ExtendedError() const
+    {
+        uint64_t value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateScanResult)->get_ExtendedError(&value));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateScanResult<D>::Updates() const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateScanResult)->get_Updates(&value));
+        return winrt::Windows::Foundation::Collections::IVectorView<winrt::Windows::Management::Update::WindowsSoftwareUpdate>{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateScanResultFactory<D>::CreateInstance(bool succeeded, uint32_t resultCode, param::iterable<winrt::Windows::Management::Update::WindowsSoftwareUpdate> const& updates) const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateScanResultFactory)->CreateInstance(succeeded, resultCode, *(void**)(&updates), &value));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateScanResult{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateScanResultFactory<D>::CreateInstance2(bool succeeded, uint32_t resultCode, uint64_t extendedError, param::iterable<winrt::Windows::Management::Update::WindowsSoftwareUpdate> const& updates) const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateScanResultFactory)->CreateInstance2(succeeded, resultCode, extendedError, *(void**)(&updates), &value));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateScanResult{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateVersion<D>::Major() const
+    {
+        uint32_t value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateVersion)->get_Major(&value));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateVersion<D>::Minor() const
+    {
+        uint32_t value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateVersion)->get_Minor(&value));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateVersion<D>::RevisionMajor() const
+    {
+        uint32_t value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateVersion)->get_RevisionMajor(&value));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateVersion<D>::RevisionMinor() const
+    {
+        uint32_t value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateVersion)->get_RevisionMinor(&value));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsSoftwareUpdateVersionFactory<D>::CreateInstance(uint32_t major, uint32_t minor, uint32_t revisionMajor, uint32_t revisionMinor) const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsSoftwareUpdateVersionFactory)->CreateInstance(major, minor, revisionMajor, revisionMinor, &value));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateVersion{ value, take_ownership_from_abi };
+    }
     template <typename D> auto consume_Windows_Management_Update_IWindowsUpdate<D>::ProviderId() const
     {
         void* value{};
@@ -572,11 +1270,78 @@ namespace winrt::impl
     {
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsUpdateManager)->StartScan(userInitiated));
     }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsUpdateManager2<D>::GetProvider(param::hstring const& id) const
+    {
+        void* result{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsUpdateManager2)->GetProvider(*(void**)(&id), &result));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateProvider{ result, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsUpdateManager2<D>::ProviderIds() const
+    {
+        uint32_t value_impl_size{};
+        void** value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsUpdateManager2)->get_ProviderIds(&value_impl_size, &value));
+        return com_array<hstring>{ value, value_impl_size, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsUpdateManager2<D>::GetApplicableSoftwareUpdates() const
+    {
+        void* result{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsUpdateManager2)->GetApplicableSoftwareUpdates(&result));
+        return winrt::Windows::Foundation::Collections::IVectorView<winrt::Windows::Management::Update::WindowsSoftwareUpdate>{ result, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsUpdateManager2<D>::PerformScan(winrt::Windows::Management::Update::WindowsUpdateManagerScanOptions const& options) const
+    {
+        void* result{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsUpdateManager2)->PerformScan(*(void**)(&options), &result));
+        return winrt::Windows::Management::Update::WindowsSoftwareUpdateScanResult{ result, take_ownership_from_abi };
+    }
     template <typename D> auto consume_Windows_Management_Update_IWindowsUpdateManagerFactory<D>::CreateInstance(param::hstring const& clientId) const
     {
         void* value{};
         check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsUpdateManagerFactory)->CreateInstance(*(void**)(&clientId), &value));
         return winrt::Windows::Management::Update::WindowsUpdateManager{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsUpdateManagerFactory2<D>::CreateInstance(param::hstring const& clientId, array_view<hstring const> providerIdFilter) const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsUpdateManagerFactory2)->CreateInstance(*(void**)(&clientId), providerIdFilter.size(), get_abi(providerIdFilter), &value));
+        return winrt::Windows::Management::Update::WindowsUpdateManager{ value, take_ownership_from_abi };
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsUpdateManagerScanOptions<D>::IsUserInitiated() const
+    {
+        bool value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsUpdateManagerScanOptions)->get_IsUserInitiated(&value));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsUpdateManagerScanOptions<D>::IsUserInitiated(bool value) const
+    {
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsUpdateManagerScanOptions)->put_IsUserInitiated(value));
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsUpdateManagerScanOptions<D>::AllowBypassThrottling() const
+    {
+        bool value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsUpdateManagerScanOptions)->get_AllowBypassThrottling(&value));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsUpdateManagerScanOptions<D>::AllowBypassThrottling(bool value) const
+    {
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsUpdateManagerScanOptions)->put_AllowBypassThrottling(value));
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsUpdateManagerScanOptions<D>::PerformUpdateActions() const
+    {
+        bool value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsUpdateManagerScanOptions)->get_PerformUpdateActions(&value));
+        return value;
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsUpdateManagerScanOptions<D>::PerformUpdateActions(bool value) const
+    {
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsUpdateManagerScanOptions)->put_PerformUpdateActions(value));
+    }
+    template <typename D> auto consume_Windows_Management_Update_IWindowsUpdateManagerScanOptionsFactory<D>::CreateInstance(bool isUserInitiated) const
+    {
+        void* value{};
+        check_hresult(WINRT_IMPL_SHIM(winrt::Windows::Management::Update::IWindowsUpdateManagerScanOptionsFactory)->CreateInstance(isUserInitiated, &value));
+        return winrt::Windows::Management::Update::WindowsUpdateManagerScanOptions{ value, take_ownership_from_abi };
     }
     template <typename D> auto consume_Windows_Management_Update_IWindowsUpdateProgressChangedEventArgs<D>::Update() const
     {
@@ -756,6 +1521,1084 @@ namespace winrt::impl
             clear_abi(value);
             typename D::abi_guard guard(this->shim());
             *value = detach_from<winrt::Windows::Foundation::Collections::ValueSet>(this->shim().Properties());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
+    struct produce<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdate> : produce_base<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdate>
+    {
+        int32_t __stdcall get_InstallationType(int32_t* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateInstallationType>(this->shim().InstallationType());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_ProviderId(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<hstring>(this->shim().ProviderId());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_UpdateId(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<hstring>(this->shim().UpdateId());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_Title(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<hstring>(this->shim().Title());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_Description(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<hstring>(this->shim().Description());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_MoreInfoUrl(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Foundation::Uri>(this->shim().MoreInfoUrl());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_DownloadSizeInBytes(uint64_t* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<uint64_t>(this->shim().DownloadSizeInBytes());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_InstallSizeInBytes(uint64_t* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<uint64_t>(this->shim().InstallSizeInBytes());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_SourceVersion(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateVersion>(this->shim().SourceVersion());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_TargetVersion(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateVersion>(this->shim().TargetVersion());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_ProductCode(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Foundation::IReference<winrt::guid>>(this->shim().ProductCode());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_PackageFamilyName(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<hstring>(this->shim().PackageFamilyName());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall Approve(void* approvalInfo, void** result) noexcept final try
+        {
+            clear_abi(result);
+            typename D::abi_guard guard(this->shim());
+            *result = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateResult>(this->shim().Approve(*reinterpret_cast<winrt::Windows::Management::Update::WindowsSoftwareUpdateApprovalInfo const*>(&approvalInfo)));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall ApproveCurrentAction(bool approve, void** result) noexcept final try
+        {
+            clear_abi(result);
+            typename D::abi_guard guard(this->shim());
+            *result = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateResult>(this->shim().ApproveCurrentAction(approve));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_CurrentAction(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<hstring>(this->shim().CurrentAction());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_ActionResultInfo(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateActionResultInfo>(this->shim().ActionResultInfo());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_ApprovalInfo(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateApprovalInfo>(this->shim().ApprovalInfo());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_ApprovedActions(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Foundation::Collections::IVectorView<winrt::Windows::Management::Update::WindowsSoftwareUpdateActionType>>(this->shim().ApprovedActions());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_AttentionRequiredInfo(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsUpdateAttentionRequiredInfo>(this->shim().AttentionRequiredInfo());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_ActionProgress(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateActionProgress>(this->shim().ActionProgress());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_RestartReason(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Foundation::IReference<winrt::Windows::Management::Update::WindowsSoftwareUpdateRestartReason>>(this->shim().RestartReason());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_AppPackageInfo(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateAppPackageInfo>(this->shim().AppPackageInfo());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_ExecutionInfo(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateExecutionInfo>(this->shim().ExecutionInfo());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_OptionalInfo(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateOptionalInfo>(this->shim().OptionalInfo());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
+    struct produce<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateActionInfo> : produce_base<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateActionInfo>
+    {
+        int32_t __stdcall get_FileName(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<hstring>(this->shim().FileName());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_FileArguments(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<hstring>(this->shim().FileArguments());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_ActionType(int32_t* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateActionType>(this->shim().ActionType());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
+    struct produce<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateActionInfoFactory> : produce_base<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateActionInfoFactory>
+    {
+        int32_t __stdcall CreateInstance(void* fileName, void* fileArguments, int32_t actionType, void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateActionInfo>(this->shim().CreateInstance(*reinterpret_cast<hstring const*>(&fileName), *reinterpret_cast<hstring const*>(&fileArguments), *reinterpret_cast<winrt::Windows::Management::Update::WindowsSoftwareUpdateActionType const*>(&actionType)));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
+    struct produce<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateActionProgress> : produce_base<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateActionProgress>
+    {
+        int32_t __stdcall get_Action(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<hstring>(this->shim().Action());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_CurrentProgress(uint64_t* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<uint64_t>(this->shim().CurrentProgress());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_TotalProgress(uint64_t* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<uint64_t>(this->shim().TotalProgress());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
+    struct produce<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateActionResultInfo> : produce_base<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateActionResultInfo>
+    {
+        int32_t __stdcall get_Timestamp(int64_t* value) noexcept final try
+        {
+            zero_abi<winrt::Windows::Foundation::DateTime>(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Foundation::DateTime>(this->shim().Timestamp());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_Succeeded(bool* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<bool>(this->shim().Succeeded());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_ResultCode(uint32_t* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<uint32_t>(this->shim().ResultCode());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_ExtendedError(uint64_t* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<uint64_t>(this->shim().ExtendedError());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_Action(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<hstring>(this->shim().Action());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
+    struct produce<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateAppPackageInfo> : produce_base<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateAppPackageInfo>
+    {
+        int32_t __stdcall get_PackageFamilyName(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<hstring>(this->shim().PackageFamilyName());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_PackageArchitecture(int32_t* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateArchitecture>(this->shim().PackageArchitecture());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_InstallUri(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Foundation::Uri>(this->shim().InstallUri());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
+    struct produce<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateAppPackageInfoFactory> : produce_base<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateAppPackageInfoFactory>
+    {
+        int32_t __stdcall CreateInstance(void* packageFamilyName, int32_t packageArchitecture, void* installUri, void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateAppPackageInfo>(this->shim().CreateInstance(*reinterpret_cast<hstring const*>(&packageFamilyName), *reinterpret_cast<winrt::Windows::Management::Update::WindowsSoftwareUpdateArchitecture const*>(&packageArchitecture), *reinterpret_cast<winrt::Windows::Foundation::Uri const*>(&installUri)));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
+    struct produce<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateApprovalInfo> : produce_base<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateApprovalInfo>
+    {
+        int32_t __stdcall get_UserInitiated(bool* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<bool>(this->shim().UserInitiated());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_AppClosure(bool* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<bool>(this->shim().AppClosure());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_MeteredNetwork(bool* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<bool>(this->shim().MeteredNetwork());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_Seeker(bool* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<bool>(this->shim().Seeker());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
+    struct produce<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateApprovalInfoFactory> : produce_base<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateApprovalInfoFactory>
+    {
+        int32_t __stdcall CreateInstance(bool userInitiated, bool appClosure, bool meteredNetwork, bool seeker, void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateApprovalInfo>(this->shim().CreateInstance(userInitiated, appClosure, meteredNetwork, seeker));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
+    struct produce<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateExecutionInfo> : produce_base<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateExecutionInfo>
+    {
+        int32_t __stdcall get_DownloadInfo(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateActionInfo>(this->shim().DownloadInfo());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_InstallInfo(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateActionInfo>(this->shim().InstallInfo());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_DeployInfo(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateActionInfo>(this->shim().DeployInfo());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_OptionalActionInfo(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateOptionalActionInfo>(this->shim().OptionalActionInfo());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
+    struct produce<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateExecutionInfoFactory> : produce_base<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateExecutionInfoFactory>
+    {
+        int32_t __stdcall CreateInstance(void* downloadInfo, void* installInfo, void* actions, void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateExecutionInfo>(this->shim().CreateInstance(*reinterpret_cast<winrt::Windows::Management::Update::WindowsSoftwareUpdateActionInfo const*>(&downloadInfo), *reinterpret_cast<winrt::Windows::Management::Update::WindowsSoftwareUpdateActionInfo const*>(&installInfo), *reinterpret_cast<winrt::Windows::Management::Update::WindowsSoftwareUpdateOptionalActionInfo const*>(&actions)));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall CreateInstance2(void* deployInfo, void* actions, void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateExecutionInfo>(this->shim().CreateInstance2(*reinterpret_cast<winrt::Windows::Management::Update::WindowsSoftwareUpdateActionInfo const*>(&deployInfo), *reinterpret_cast<winrt::Windows::Management::Update::WindowsSoftwareUpdateOptionalActionInfo const*>(&actions)));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
+    struct produce<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateFactory> : produce_base<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateFactory>
+    {
+        int32_t __stdcall CreateInstance(void* providerId, int32_t installationType, void* updateId, void* title, void* description, void* moreInfoUrl, uint64_t downloadSizeInBytes, uint64_t installSizeInBytes, void* sourceVersion, void* targetVersion, void* appPackageInfo, void* executionInfo, void* optionalInfo, void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdate>(this->shim().CreateInstance(*reinterpret_cast<hstring const*>(&providerId), *reinterpret_cast<winrt::Windows::Management::Update::WindowsSoftwareUpdateInstallationType const*>(&installationType), *reinterpret_cast<hstring const*>(&updateId), *reinterpret_cast<hstring const*>(&title), *reinterpret_cast<hstring const*>(&description), *reinterpret_cast<winrt::Windows::Foundation::Uri const*>(&moreInfoUrl), downloadSizeInBytes, installSizeInBytes, *reinterpret_cast<winrt::Windows::Management::Update::WindowsSoftwareUpdateVersion const*>(&sourceVersion), *reinterpret_cast<winrt::Windows::Management::Update::WindowsSoftwareUpdateVersion const*>(&targetVersion), *reinterpret_cast<winrt::Windows::Management::Update::WindowsSoftwareUpdateAppPackageInfo const*>(&appPackageInfo), *reinterpret_cast<winrt::Windows::Management::Update::WindowsSoftwareUpdateExecutionInfo const*>(&executionInfo), *reinterpret_cast<winrt::Windows::Management::Update::WindowsSoftwareUpdateOptionalInfo const*>(&optionalInfo)));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall CreateInstance2(void* providerId, int32_t installationType, void* updateId, void* title, void* description, void* moreInfoUrl, uint64_t downloadSizeInBytes, uint64_t installSizeInBytes, void* productCode, void* packageFamilyName, void* sourceVersion, void* targetVersion, void* appPackageInfo, void* executionInfo, void* optionalInfo, void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdate>(this->shim().CreateInstance2(*reinterpret_cast<hstring const*>(&providerId), *reinterpret_cast<winrt::Windows::Management::Update::WindowsSoftwareUpdateInstallationType const*>(&installationType), *reinterpret_cast<hstring const*>(&updateId), *reinterpret_cast<hstring const*>(&title), *reinterpret_cast<hstring const*>(&description), *reinterpret_cast<winrt::Windows::Foundation::Uri const*>(&moreInfoUrl), downloadSizeInBytes, installSizeInBytes, *reinterpret_cast<winrt::Windows::Foundation::IReference<winrt::guid> const*>(&productCode), *reinterpret_cast<hstring const*>(&packageFamilyName), *reinterpret_cast<winrt::Windows::Management::Update::WindowsSoftwareUpdateVersion const*>(&sourceVersion), *reinterpret_cast<winrt::Windows::Management::Update::WindowsSoftwareUpdateVersion const*>(&targetVersion), *reinterpret_cast<winrt::Windows::Management::Update::WindowsSoftwareUpdateAppPackageInfo const*>(&appPackageInfo), *reinterpret_cast<winrt::Windows::Management::Update::WindowsSoftwareUpdateExecutionInfo const*>(&executionInfo), *reinterpret_cast<winrt::Windows::Management::Update::WindowsSoftwareUpdateOptionalInfo const*>(&optionalInfo)));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
+    struct produce<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateLocalizationInfo> : produce_base<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateLocalizationInfo>
+    {
+        int32_t __stdcall get_LanguageId(uint32_t* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<uint32_t>(this->shim().LanguageId());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_Title(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<hstring>(this->shim().Title());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_Description(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<hstring>(this->shim().Description());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_MoreInfoUrl(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Foundation::Uri>(this->shim().MoreInfoUrl());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
+    struct produce<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateLocalizationInfoFactory> : produce_base<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateLocalizationInfoFactory>
+    {
+        int32_t __stdcall CreateInstance(uint32_t languageId, void* title, void* description, void* moreInfoUrl, void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateLocalizationInfo>(this->shim().CreateInstance(languageId, *reinterpret_cast<hstring const*>(&title), *reinterpret_cast<hstring const*>(&description), *reinterpret_cast<winrt::Windows::Foundation::Uri const*>(&moreInfoUrl)));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
+    struct produce<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateOptionalActionInfo> : produce_base<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateOptionalActionInfo>
+    {
+        int32_t __stdcall get_CloseAndDeployInfo(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateActionInfo>(this->shim().CloseAndDeployInfo());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_CloseAndInstallInfo(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateActionInfo>(this->shim().CloseAndInstallInfo());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_CloseAndRestartInfo(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateActionInfo>(this->shim().CloseAndRestartInfo());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
+    struct produce<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateOptionalActionInfoFactory> : produce_base<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateOptionalActionInfoFactory>
+    {
+        int32_t __stdcall CreateInstance(void* closeAndDeployInfo, void* closeAndInstallInfo, void* closeAndRestartInfo, void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateOptionalActionInfo>(this->shim().CreateInstance(*reinterpret_cast<winrt::Windows::Management::Update::WindowsSoftwareUpdateActionInfo const*>(&closeAndDeployInfo), *reinterpret_cast<winrt::Windows::Management::Update::WindowsSoftwareUpdateActionInfo const*>(&closeAndInstallInfo), *reinterpret_cast<winrt::Windows::Management::Update::WindowsSoftwareUpdateActionInfo const*>(&closeAndRestartInfo)));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
+    struct produce<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateOptionalInfo> : produce_base<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateOptionalInfo>
+    {
+        int32_t __stdcall get_LocalizationInfo(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Foundation::Collections::IVectorView<winrt::Windows::Management::Update::WindowsSoftwareUpdateLocalizationInfo>>(this->shim().LocalizationInfo());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_ComplianceDeadlineInDays(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Foundation::IReference<int32_t>>(this->shim().ComplianceDeadlineInDays());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_ComplianceGracePeriodInDays(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Foundation::IReference<int32_t>>(this->shim().ComplianceGracePeriodInDays());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
+    struct produce<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateOptionalInfoFactory> : produce_base<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateOptionalInfoFactory>
+    {
+        int32_t __stdcall CreateInstance(void* complianceDeadlineInDays, void* complianceGracePeriodInDays, void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateOptionalInfo>(this->shim().CreateInstance(*reinterpret_cast<winrt::Windows::Foundation::IReference<int32_t> const*>(&complianceDeadlineInDays), *reinterpret_cast<winrt::Windows::Foundation::IReference<int32_t> const*>(&complianceGracePeriodInDays)));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall CreateInstance2(void* localizationInfo, void* complianceDeadlineInDays, void* complianceGracePeriodInDays, void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateOptionalInfo>(this->shim().CreateInstance2(*reinterpret_cast<winrt::Windows::Foundation::Collections::IIterable<winrt::Windows::Management::Update::WindowsSoftwareUpdateLocalizationInfo> const*>(&localizationInfo), *reinterpret_cast<winrt::Windows::Foundation::IReference<int32_t> const*>(&complianceDeadlineInDays), *reinterpret_cast<winrt::Windows::Foundation::IReference<int32_t> const*>(&complianceGracePeriodInDays)));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
+    struct produce<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateProvider> : produce_base<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateProvider>
+    {
+        int32_t __stdcall Register(void** result) noexcept final try
+        {
+            clear_abi(result);
+            typename D::abi_guard guard(this->shim());
+            *result = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateResult>(this->shim().Register());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall Unregister(void** result) noexcept final try
+        {
+            clear_abi(result);
+            typename D::abi_guard guard(this->shim());
+            *result = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateResult>(this->shim().Unregister());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall Validate(void** result) noexcept final try
+        {
+            clear_abi(result);
+            typename D::abi_guard guard(this->shim());
+            *result = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateResult>(this->shim().Validate());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_Id(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<hstring>(this->shim().Id());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_Version(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<hstring>(this->shim().Version());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_FolderPath(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<hstring>(this->shim().FolderPath());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_CatalogFile(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<hstring>(this->shim().CatalogFile());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_ScanFileName(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<hstring>(this->shim().ScanFileName());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_ScanFileArguments(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<hstring>(this->shim().ScanFileArguments());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_Type(int32_t* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateProviderType>(this->shim().Type());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_PayloadFiles(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Foundation::Collections::IVectorView<winrt::Windows::Management::Update::WindowsSoftwareUpdateProviderPayloadFileInfo>>(this->shim().PayloadFiles());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_TrustState(int32_t* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateProviderTrustState>(this->shim().TrustState());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_RegistrationType(int32_t* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateProviderRegistrationType>(this->shim().RegistrationType());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_Properties(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Foundation::Collections::PropertySet>(this->shim().Properties());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall GetPropertyValue(void* name, void** result) noexcept final try
+        {
+            clear_abi(result);
+            typename D::abi_guard guard(this->shim());
+            *result = detach_from<winrt::Windows::Foundation::IInspectable>(this->shim().GetPropertyValue(*reinterpret_cast<hstring const*>(&name)));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
+    struct produce<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateProviderActionResult> : produce_base<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateProviderActionResult>
+    {
+        int32_t __stdcall get_Result(int32_t* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateActionResult>(this->shim().Result());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_RestartReason(int32_t* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateRestartReason>(this->shim().RestartReason());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_ResultCode(uint32_t* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<uint32_t>(this->shim().ResultCode());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_ExtendedError(uint64_t* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<uint64_t>(this->shim().ExtendedError());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
+    struct produce<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateProviderActionResultFactory> : produce_base<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateProviderActionResultFactory>
+    {
+        int32_t __stdcall CreateInstance(int32_t actionResult, int32_t restartReason, uint32_t resultCode, uint64_t extendedError, void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateProviderActionResult>(this->shim().CreateInstance(*reinterpret_cast<winrt::Windows::Management::Update::WindowsSoftwareUpdateActionResult const*>(&actionResult), *reinterpret_cast<winrt::Windows::Management::Update::WindowsSoftwareUpdateRestartReason const*>(&restartReason), resultCode, extendedError));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
+    struct produce<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateProviderFactory> : produce_base<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateProviderFactory>
+    {
+        int32_t __stdcall CreateInstance(void* folderPath, void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateProvider>(this->shim().CreateInstance(*reinterpret_cast<hstring const*>(&folderPath)));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
+    struct produce<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateProviderPayloadFileInfo> : produce_base<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateProviderPayloadFileInfo>
+    {
+        int32_t __stdcall get_Filename(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<hstring>(this->shim().Filename());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_FileHash(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<hstring>(this->shim().FileHash());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_CatalogFile(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<hstring>(this->shim().CatalogFile());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_TrustState(int32_t* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateProviderTrustState>(this->shim().TrustState());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
+    struct produce<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateProviderStatus> : produce_base<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateProviderStatus>
+    {
+        int32_t __stdcall add_CancelRequested(void* handler, winrt::event_token* token) noexcept final try
+        {
+            zero_abi<winrt::event_token>(token);
+            typename D::abi_guard guard(this->shim());
+            *token = detach_from<winrt::event_token>(this->shim().CancelRequested(*reinterpret_cast<winrt::Windows::Foundation::TypedEventHandler<winrt::Windows::Management::Update::WindowsSoftwareUpdateProviderStatus, winrt::Windows::Foundation::IInspectable> const*>(&handler)));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall remove_CancelRequested(winrt::event_token token) noexcept final
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().CancelRequested(*reinterpret_cast<winrt::event_token const*>(&token));
+            return 0;
+        }
+        int32_t __stdcall SetScanResult(bool succeeded, uint32_t resultCode, uint64_t extendedError, void* updates, void** result) noexcept final try
+        {
+            clear_abi(result);
+            typename D::abi_guard guard(this->shim());
+            *result = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateResult>(this->shim().SetScanResult(succeeded, resultCode, extendedError, *reinterpret_cast<winrt::Windows::Foundation::Collections::IIterable<winrt::Windows::Management::Update::WindowsSoftwareUpdate> const*>(&updates)));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall SetActionProgress(uint64_t current, uint64_t total, void** result) noexcept final try
+        {
+            clear_abi(result);
+            typename D::abi_guard guard(this->shim());
+            *result = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateResult>(this->shim().SetActionProgress(current, total));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall SetActionResult(void* actionResult, void** result) noexcept final try
+        {
+            clear_abi(result);
+            typename D::abi_guard guard(this->shim());
+            *result = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateResult>(this->shim().SetActionResult(*reinterpret_cast<winrt::Windows::Management::Update::WindowsSoftwareUpdateProviderActionResult const*>(&actionResult)));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
+    struct produce<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateProviderStatusFactory> : produce_base<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateProviderStatusFactory>
+    {
+        int32_t __stdcall CreateInstance(void* providerId, void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateProviderStatus>(this->shim().CreateInstance(*reinterpret_cast<hstring const*>(&providerId)));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
+    struct produce<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateResult> : produce_base<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateResult>
+    {
+        int32_t __stdcall get_Succeeded(bool* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<bool>(this->shim().Succeeded());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_CancelRequested(bool* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<bool>(this->shim().CancelRequested());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_ResultCode(uint32_t* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<uint32_t>(this->shim().ResultCode());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_ExtendedError(uint64_t* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<uint64_t>(this->shim().ExtendedError());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
+    struct produce<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateResultFactory> : produce_base<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateResultFactory>
+    {
+        int32_t __stdcall CreateInstance(bool succeeded, uint32_t resultCode, void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateResult>(this->shim().CreateInstance(succeeded, resultCode));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall CreateInstance2(bool succeeded, uint32_t resultCode, uint64_t extendedError, void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateResult>(this->shim().CreateInstance2(succeeded, resultCode, extendedError));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall CreateInstance3(bool succeeded, bool cancelRequested, uint32_t resultCode, uint64_t extendedError, void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateResult>(this->shim().CreateInstance3(succeeded, cancelRequested, resultCode, extendedError));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
+    struct produce<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateScanResult> : produce_base<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateScanResult>
+    {
+        int32_t __stdcall get_Succeeded(bool* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<bool>(this->shim().Succeeded());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_ResultCode(uint32_t* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<uint32_t>(this->shim().ResultCode());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_ExtendedError(uint64_t* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<uint64_t>(this->shim().ExtendedError());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_Updates(void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Foundation::Collections::IVectorView<winrt::Windows::Management::Update::WindowsSoftwareUpdate>>(this->shim().Updates());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
+    struct produce<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateScanResultFactory> : produce_base<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateScanResultFactory>
+    {
+        int32_t __stdcall CreateInstance(bool succeeded, uint32_t resultCode, void* updates, void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateScanResult>(this->shim().CreateInstance(succeeded, resultCode, *reinterpret_cast<winrt::Windows::Foundation::Collections::IIterable<winrt::Windows::Management::Update::WindowsSoftwareUpdate> const*>(&updates)));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall CreateInstance2(bool succeeded, uint32_t resultCode, uint64_t extendedError, void* updates, void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateScanResult>(this->shim().CreateInstance2(succeeded, resultCode, extendedError, *reinterpret_cast<winrt::Windows::Foundation::Collections::IIterable<winrt::Windows::Management::Update::WindowsSoftwareUpdate> const*>(&updates)));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
+    struct produce<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateVersion> : produce_base<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateVersion>
+    {
+        int32_t __stdcall get_Major(uint32_t* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<uint32_t>(this->shim().Major());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_Minor(uint32_t* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<uint32_t>(this->shim().Minor());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_RevisionMajor(uint32_t* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<uint32_t>(this->shim().RevisionMajor());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_RevisionMinor(uint32_t* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<uint32_t>(this->shim().RevisionMinor());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
+    struct produce<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateVersionFactory> : produce_base<D, winrt::Windows::Management::Update::IWindowsSoftwareUpdateVersionFactory>
+    {
+        int32_t __stdcall CreateInstance(uint32_t major, uint32_t minor, uint32_t revisionMajor, uint32_t revisionMinor, void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateVersion>(this->shim().CreateInstance(major, minor, revisionMajor, revisionMinor));
             return 0;
         }
         catch (...) { return to_hresult(); }
@@ -1502,6 +3345,44 @@ namespace winrt::impl
 #endif
 #ifndef WINRT_LEAN_AND_MEAN
     template <typename D>
+    struct produce<D, winrt::Windows::Management::Update::IWindowsUpdateManager2> : produce_base<D, winrt::Windows::Management::Update::IWindowsUpdateManager2>
+    {
+        int32_t __stdcall GetProvider(void* id, void** result) noexcept final try
+        {
+            clear_abi(result);
+            typename D::abi_guard guard(this->shim());
+            *result = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateProvider>(this->shim().GetProvider(*reinterpret_cast<hstring const*>(&id)));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_ProviderIds(uint32_t* __valueSize, void*** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            std::tie(*__valueSize, *value) = detach_abi(this->shim().ProviderIds());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall GetApplicableSoftwareUpdates(void** result) noexcept final try
+        {
+            clear_abi(result);
+            typename D::abi_guard guard(this->shim());
+            *result = detach_from<winrt::Windows::Foundation::Collections::IVectorView<winrt::Windows::Management::Update::WindowsSoftwareUpdate>>(this->shim().GetApplicableSoftwareUpdates());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall PerformScan(void* options, void** result) noexcept final try
+        {
+            clear_abi(result);
+            typename D::abi_guard guard(this->shim());
+            *result = detach_from<winrt::Windows::Management::Update::WindowsSoftwareUpdateScanResult>(this->shim().PerformScan(*reinterpret_cast<winrt::Windows::Management::Update::WindowsUpdateManagerScanOptions const*>(&options)));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
     struct produce<D, winrt::Windows::Management::Update::IWindowsUpdateManagerFactory> : produce_base<D, winrt::Windows::Management::Update::IWindowsUpdateManagerFactory>
     {
         int32_t __stdcall CreateInstance(void* clientId, void** value) noexcept final try
@@ -1509,6 +3390,82 @@ namespace winrt::impl
             clear_abi(value);
             typename D::abi_guard guard(this->shim());
             *value = detach_from<winrt::Windows::Management::Update::WindowsUpdateManager>(this->shim().CreateInstance(*reinterpret_cast<hstring const*>(&clientId)));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
+    struct produce<D, winrt::Windows::Management::Update::IWindowsUpdateManagerFactory2> : produce_base<D, winrt::Windows::Management::Update::IWindowsUpdateManagerFactory2>
+    {
+        int32_t __stdcall CreateInstance(void* clientId, uint32_t __providerIdFilterSize, void** providerIdFilter, void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsUpdateManager>(this->shim().CreateInstance(*reinterpret_cast<hstring const*>(&clientId), array_view<hstring const>(reinterpret_cast<hstring const *>(providerIdFilter), reinterpret_cast<hstring const *>(providerIdFilter) + __providerIdFilterSize)));
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
+    struct produce<D, winrt::Windows::Management::Update::IWindowsUpdateManagerScanOptions> : produce_base<D, winrt::Windows::Management::Update::IWindowsUpdateManagerScanOptions>
+    {
+        int32_t __stdcall get_IsUserInitiated(bool* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<bool>(this->shim().IsUserInitiated());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall put_IsUserInitiated(bool value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().IsUserInitiated(value);
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_AllowBypassThrottling(bool* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<bool>(this->shim().AllowBypassThrottling());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall put_AllowBypassThrottling(bool value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().AllowBypassThrottling(value);
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall get_PerformUpdateActions(bool* value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<bool>(this->shim().PerformUpdateActions());
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+        int32_t __stdcall put_PerformUpdateActions(bool value) noexcept final try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().PerformUpdateActions(value);
+            return 0;
+        }
+        catch (...) { return to_hresult(); }
+    };
+#endif
+#ifndef WINRT_LEAN_AND_MEAN
+    template <typename D>
+    struct produce<D, winrt::Windows::Management::Update::IWindowsUpdateManagerScanOptionsFactory> : produce_base<D, winrt::Windows::Management::Update::IWindowsUpdateManagerScanOptionsFactory>
+    {
+        int32_t __stdcall CreateInstance(bool isUserInitiated, void** value) noexcept final try
+        {
+            clear_abi(value);
+            typename D::abi_guard guard(this->shim());
+            *value = detach_from<winrt::Windows::Management::Update::WindowsUpdateManagerScanOptions>(this->shim().CreateInstance(isUserInitiated));
             return 0;
         }
         catch (...) { return to_hresult(); }
@@ -1737,6 +3694,86 @@ WINRT_EXPORT namespace winrt::Windows::Management::Update
     {
         return impl::call_factory_cast<bool(*)(IPreviewBuildsManagerStatics const&), PreviewBuildsManager, IPreviewBuildsManagerStatics>([](IPreviewBuildsManagerStatics const& f) { return f.IsSupported(); });
     }
+    inline WindowsSoftwareUpdate::WindowsSoftwareUpdate(param::hstring const& providerId, winrt::Windows::Management::Update::WindowsSoftwareUpdateInstallationType const& installationType, param::hstring const& updateId, param::hstring const& title, param::hstring const& description, winrt::Windows::Foundation::Uri const& moreInfoUrl, uint64_t downloadSizeInBytes, uint64_t installSizeInBytes, winrt::Windows::Management::Update::WindowsSoftwareUpdateVersion const& sourceVersion, winrt::Windows::Management::Update::WindowsSoftwareUpdateVersion const& targetVersion, winrt::Windows::Management::Update::WindowsSoftwareUpdateAppPackageInfo const& appPackageInfo, winrt::Windows::Management::Update::WindowsSoftwareUpdateExecutionInfo const& executionInfo, winrt::Windows::Management::Update::WindowsSoftwareUpdateOptionalInfo const& optionalInfo) :
+        WindowsSoftwareUpdate(impl::call_factory<WindowsSoftwareUpdate, IWindowsSoftwareUpdateFactory>([&](IWindowsSoftwareUpdateFactory const& f) { return f.CreateInstance(providerId, installationType, updateId, title, description, moreInfoUrl, downloadSizeInBytes, installSizeInBytes, sourceVersion, targetVersion, appPackageInfo, executionInfo, optionalInfo); }))
+    {
+    }
+    inline WindowsSoftwareUpdate::WindowsSoftwareUpdate(param::hstring const& providerId, winrt::Windows::Management::Update::WindowsSoftwareUpdateInstallationType const& installationType, param::hstring const& updateId, param::hstring const& title, param::hstring const& description, winrt::Windows::Foundation::Uri const& moreInfoUrl, uint64_t downloadSizeInBytes, uint64_t installSizeInBytes, winrt::Windows::Foundation::IReference<winrt::guid> const& productCode, param::hstring const& packageFamilyName, winrt::Windows::Management::Update::WindowsSoftwareUpdateVersion const& sourceVersion, winrt::Windows::Management::Update::WindowsSoftwareUpdateVersion const& targetVersion, winrt::Windows::Management::Update::WindowsSoftwareUpdateAppPackageInfo const& appPackageInfo, winrt::Windows::Management::Update::WindowsSoftwareUpdateExecutionInfo const& executionInfo, winrt::Windows::Management::Update::WindowsSoftwareUpdateOptionalInfo const& optionalInfo) :
+        WindowsSoftwareUpdate(impl::call_factory<WindowsSoftwareUpdate, IWindowsSoftwareUpdateFactory>([&](IWindowsSoftwareUpdateFactory const& f) { return f.CreateInstance2(providerId, installationType, updateId, title, description, moreInfoUrl, downloadSizeInBytes, installSizeInBytes, productCode, packageFamilyName, sourceVersion, targetVersion, appPackageInfo, executionInfo, optionalInfo); }))
+    {
+    }
+    inline WindowsSoftwareUpdateActionInfo::WindowsSoftwareUpdateActionInfo(param::hstring const& fileName, param::hstring const& fileArguments, winrt::Windows::Management::Update::WindowsSoftwareUpdateActionType const& actionType) :
+        WindowsSoftwareUpdateActionInfo(impl::call_factory<WindowsSoftwareUpdateActionInfo, IWindowsSoftwareUpdateActionInfoFactory>([&](IWindowsSoftwareUpdateActionInfoFactory const& f) { return f.CreateInstance(fileName, fileArguments, actionType); }))
+    {
+    }
+    inline WindowsSoftwareUpdateAppPackageInfo::WindowsSoftwareUpdateAppPackageInfo(param::hstring const& packageFamilyName, winrt::Windows::Management::Update::WindowsSoftwareUpdateArchitecture const& packageArchitecture, winrt::Windows::Foundation::Uri const& installUri) :
+        WindowsSoftwareUpdateAppPackageInfo(impl::call_factory<WindowsSoftwareUpdateAppPackageInfo, IWindowsSoftwareUpdateAppPackageInfoFactory>([&](IWindowsSoftwareUpdateAppPackageInfoFactory const& f) { return f.CreateInstance(packageFamilyName, packageArchitecture, installUri); }))
+    {
+    }
+    inline WindowsSoftwareUpdateApprovalInfo::WindowsSoftwareUpdateApprovalInfo(bool userInitiated, bool appClosure, bool meteredNetwork, bool seeker) :
+        WindowsSoftwareUpdateApprovalInfo(impl::call_factory<WindowsSoftwareUpdateApprovalInfo, IWindowsSoftwareUpdateApprovalInfoFactory>([&](IWindowsSoftwareUpdateApprovalInfoFactory const& f) { return f.CreateInstance(userInitiated, appClosure, meteredNetwork, seeker); }))
+    {
+    }
+    inline WindowsSoftwareUpdateExecutionInfo::WindowsSoftwareUpdateExecutionInfo(winrt::Windows::Management::Update::WindowsSoftwareUpdateActionInfo const& downloadInfo, winrt::Windows::Management::Update::WindowsSoftwareUpdateActionInfo const& installInfo, winrt::Windows::Management::Update::WindowsSoftwareUpdateOptionalActionInfo const& actions) :
+        WindowsSoftwareUpdateExecutionInfo(impl::call_factory<WindowsSoftwareUpdateExecutionInfo, IWindowsSoftwareUpdateExecutionInfoFactory>([&](IWindowsSoftwareUpdateExecutionInfoFactory const& f) { return f.CreateInstance(downloadInfo, installInfo, actions); }))
+    {
+    }
+    inline WindowsSoftwareUpdateExecutionInfo::WindowsSoftwareUpdateExecutionInfo(winrt::Windows::Management::Update::WindowsSoftwareUpdateActionInfo const& deployInfo, winrt::Windows::Management::Update::WindowsSoftwareUpdateOptionalActionInfo const& actions) :
+        WindowsSoftwareUpdateExecutionInfo(impl::call_factory<WindowsSoftwareUpdateExecutionInfo, IWindowsSoftwareUpdateExecutionInfoFactory>([&](IWindowsSoftwareUpdateExecutionInfoFactory const& f) { return f.CreateInstance2(deployInfo, actions); }))
+    {
+    }
+    inline WindowsSoftwareUpdateLocalizationInfo::WindowsSoftwareUpdateLocalizationInfo(uint32_t languageId, param::hstring const& title, param::hstring const& description, winrt::Windows::Foundation::Uri const& moreInfoUrl) :
+        WindowsSoftwareUpdateLocalizationInfo(impl::call_factory<WindowsSoftwareUpdateLocalizationInfo, IWindowsSoftwareUpdateLocalizationInfoFactory>([&](IWindowsSoftwareUpdateLocalizationInfoFactory const& f) { return f.CreateInstance(languageId, title, description, moreInfoUrl); }))
+    {
+    }
+    inline WindowsSoftwareUpdateOptionalActionInfo::WindowsSoftwareUpdateOptionalActionInfo(winrt::Windows::Management::Update::WindowsSoftwareUpdateActionInfo const& closeAndDeployInfo, winrt::Windows::Management::Update::WindowsSoftwareUpdateActionInfo const& closeAndInstallInfo, winrt::Windows::Management::Update::WindowsSoftwareUpdateActionInfo const& closeAndRestartInfo) :
+        WindowsSoftwareUpdateOptionalActionInfo(impl::call_factory<WindowsSoftwareUpdateOptionalActionInfo, IWindowsSoftwareUpdateOptionalActionInfoFactory>([&](IWindowsSoftwareUpdateOptionalActionInfoFactory const& f) { return f.CreateInstance(closeAndDeployInfo, closeAndInstallInfo, closeAndRestartInfo); }))
+    {
+    }
+    inline WindowsSoftwareUpdateOptionalInfo::WindowsSoftwareUpdateOptionalInfo(winrt::Windows::Foundation::IReference<int32_t> const& complianceDeadlineInDays, winrt::Windows::Foundation::IReference<int32_t> const& complianceGracePeriodInDays) :
+        WindowsSoftwareUpdateOptionalInfo(impl::call_factory<WindowsSoftwareUpdateOptionalInfo, IWindowsSoftwareUpdateOptionalInfoFactory>([&](IWindowsSoftwareUpdateOptionalInfoFactory const& f) { return f.CreateInstance(complianceDeadlineInDays, complianceGracePeriodInDays); }))
+    {
+    }
+    inline WindowsSoftwareUpdateOptionalInfo::WindowsSoftwareUpdateOptionalInfo(param::iterable<winrt::Windows::Management::Update::WindowsSoftwareUpdateLocalizationInfo> const& localizationInfo, winrt::Windows::Foundation::IReference<int32_t> const& complianceDeadlineInDays, winrt::Windows::Foundation::IReference<int32_t> const& complianceGracePeriodInDays) :
+        WindowsSoftwareUpdateOptionalInfo(impl::call_factory<WindowsSoftwareUpdateOptionalInfo, IWindowsSoftwareUpdateOptionalInfoFactory>([&](IWindowsSoftwareUpdateOptionalInfoFactory const& f) { return f.CreateInstance2(localizationInfo, complianceDeadlineInDays, complianceGracePeriodInDays); }))
+    {
+    }
+    inline WindowsSoftwareUpdateProvider::WindowsSoftwareUpdateProvider(param::hstring const& folderPath) :
+        WindowsSoftwareUpdateProvider(impl::call_factory<WindowsSoftwareUpdateProvider, IWindowsSoftwareUpdateProviderFactory>([&](IWindowsSoftwareUpdateProviderFactory const& f) { return f.CreateInstance(folderPath); }))
+    {
+    }
+    inline WindowsSoftwareUpdateProviderActionResult::WindowsSoftwareUpdateProviderActionResult(winrt::Windows::Management::Update::WindowsSoftwareUpdateActionResult const& actionResult, winrt::Windows::Management::Update::WindowsSoftwareUpdateRestartReason const& restartReason, uint32_t resultCode, uint64_t extendedError) :
+        WindowsSoftwareUpdateProviderActionResult(impl::call_factory<WindowsSoftwareUpdateProviderActionResult, IWindowsSoftwareUpdateProviderActionResultFactory>([&](IWindowsSoftwareUpdateProviderActionResultFactory const& f) { return f.CreateInstance(actionResult, restartReason, resultCode, extendedError); }))
+    {
+    }
+    inline WindowsSoftwareUpdateProviderStatus::WindowsSoftwareUpdateProviderStatus(param::hstring const& providerId) :
+        WindowsSoftwareUpdateProviderStatus(impl::call_factory<WindowsSoftwareUpdateProviderStatus, IWindowsSoftwareUpdateProviderStatusFactory>([&](IWindowsSoftwareUpdateProviderStatusFactory const& f) { return f.CreateInstance(providerId); }))
+    {
+    }
+    inline WindowsSoftwareUpdateResult::WindowsSoftwareUpdateResult(bool succeeded, uint32_t resultCode) :
+        WindowsSoftwareUpdateResult(impl::call_factory<WindowsSoftwareUpdateResult, IWindowsSoftwareUpdateResultFactory>([&](IWindowsSoftwareUpdateResultFactory const& f) { return f.CreateInstance(succeeded, resultCode); }))
+    {
+    }
+    inline WindowsSoftwareUpdateResult::WindowsSoftwareUpdateResult(bool succeeded, uint32_t resultCode, uint64_t extendedError) :
+        WindowsSoftwareUpdateResult(impl::call_factory<WindowsSoftwareUpdateResult, IWindowsSoftwareUpdateResultFactory>([&](IWindowsSoftwareUpdateResultFactory const& f) { return f.CreateInstance2(succeeded, resultCode, extendedError); }))
+    {
+    }
+    inline WindowsSoftwareUpdateResult::WindowsSoftwareUpdateResult(bool succeeded, bool cancelRequested, uint32_t resultCode, uint64_t extendedError) :
+        WindowsSoftwareUpdateResult(impl::call_factory<WindowsSoftwareUpdateResult, IWindowsSoftwareUpdateResultFactory>([&](IWindowsSoftwareUpdateResultFactory const& f) { return f.CreateInstance3(succeeded, cancelRequested, resultCode, extendedError); }))
+    {
+    }
+    inline WindowsSoftwareUpdateScanResult::WindowsSoftwareUpdateScanResult(bool succeeded, uint32_t resultCode, param::iterable<winrt::Windows::Management::Update::WindowsSoftwareUpdate> const& updates) :
+        WindowsSoftwareUpdateScanResult(impl::call_factory<WindowsSoftwareUpdateScanResult, IWindowsSoftwareUpdateScanResultFactory>([&](IWindowsSoftwareUpdateScanResultFactory const& f) { return f.CreateInstance(succeeded, resultCode, updates); }))
+    {
+    }
+    inline WindowsSoftwareUpdateScanResult::WindowsSoftwareUpdateScanResult(bool succeeded, uint32_t resultCode, uint64_t extendedError, param::iterable<winrt::Windows::Management::Update::WindowsSoftwareUpdate> const& updates) :
+        WindowsSoftwareUpdateScanResult(impl::call_factory<WindowsSoftwareUpdateScanResult, IWindowsSoftwareUpdateScanResultFactory>([&](IWindowsSoftwareUpdateScanResultFactory const& f) { return f.CreateInstance2(succeeded, resultCode, extendedError, updates); }))
+    {
+    }
+    inline WindowsSoftwareUpdateVersion::WindowsSoftwareUpdateVersion(uint32_t major, uint32_t minor, uint32_t revisionMajor, uint32_t revisionMinor) :
+        WindowsSoftwareUpdateVersion(impl::call_factory<WindowsSoftwareUpdateVersion, IWindowsSoftwareUpdateVersionFactory>([&](IWindowsSoftwareUpdateVersionFactory const& f) { return f.CreateInstance(major, minor, revisionMajor, revisionMinor); }))
+    {
+    }
     inline auto WindowsUpdateAdministrator::GetRegisteredAdministrator(param::hstring const& organizationName)
     {
         return impl::call_factory<WindowsUpdateAdministrator, IWindowsUpdateAdministratorStatics>([&](IWindowsUpdateAdministratorStatics const& f) { return f.GetRegisteredAdministrator(organizationName); });
@@ -1769,6 +3806,18 @@ WINRT_EXPORT namespace winrt::Windows::Management::Update
         WindowsUpdateManager(impl::call_factory<WindowsUpdateManager, IWindowsUpdateManagerFactory>([&](IWindowsUpdateManagerFactory const& f) { return f.CreateInstance(clientId); }))
     {
     }
+    inline WindowsUpdateManager::WindowsUpdateManager(param::hstring const& clientId, array_view<hstring const> providerIdFilter) :
+        WindowsUpdateManager(impl::call_factory<WindowsUpdateManager, IWindowsUpdateManagerFactory2>([&](IWindowsUpdateManagerFactory2 const& f) { return f.CreateInstance(clientId, providerIdFilter); }))
+    {
+    }
+    inline WindowsUpdateManagerScanOptions::WindowsUpdateManagerScanOptions() :
+        WindowsUpdateManagerScanOptions(impl::call_factory_cast<WindowsUpdateManagerScanOptions(*)(winrt::Windows::Foundation::IActivationFactory const&), WindowsUpdateManagerScanOptions>([](winrt::Windows::Foundation::IActivationFactory const& f) { return f.template ActivateInstance<WindowsUpdateManagerScanOptions>(); }))
+    {
+    }
+    inline WindowsUpdateManagerScanOptions::WindowsUpdateManagerScanOptions(bool isUserInitiated) :
+        WindowsUpdateManagerScanOptions(impl::call_factory<WindowsUpdateManagerScanOptions, IWindowsUpdateManagerScanOptionsFactory>([&](IWindowsUpdateManagerScanOptionsFactory const& f) { return f.CreateInstance(isUserInitiated); }))
+    {
+    }
     inline WindowsUpdateRestartRequestOptions::WindowsUpdateRestartRequestOptions() :
         WindowsUpdateRestartRequestOptions(impl::call_factory_cast<WindowsUpdateRestartRequestOptions(*)(winrt::Windows::Foundation::IActivationFactory const&), WindowsUpdateRestartRequestOptions>([](winrt::Windows::Foundation::IActivationFactory const& f) { return f.template ActivateInstance<WindowsUpdateRestartRequestOptions>(); }))
     {
@@ -1784,6 +3833,37 @@ namespace std
     template<> struct hash<winrt::Windows::Management::Update::IPreviewBuildsManager> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Management::Update::IPreviewBuildsManagerStatics> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Management::Update::IPreviewBuildsState> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::IWindowsSoftwareUpdate> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::IWindowsSoftwareUpdateActionInfo> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::IWindowsSoftwareUpdateActionInfoFactory> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::IWindowsSoftwareUpdateActionProgress> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::IWindowsSoftwareUpdateActionResultInfo> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::IWindowsSoftwareUpdateAppPackageInfo> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::IWindowsSoftwareUpdateAppPackageInfoFactory> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::IWindowsSoftwareUpdateApprovalInfo> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::IWindowsSoftwareUpdateApprovalInfoFactory> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::IWindowsSoftwareUpdateExecutionInfo> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::IWindowsSoftwareUpdateExecutionInfoFactory> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::IWindowsSoftwareUpdateFactory> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::IWindowsSoftwareUpdateLocalizationInfo> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::IWindowsSoftwareUpdateLocalizationInfoFactory> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::IWindowsSoftwareUpdateOptionalActionInfo> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::IWindowsSoftwareUpdateOptionalActionInfoFactory> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::IWindowsSoftwareUpdateOptionalInfo> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::IWindowsSoftwareUpdateOptionalInfoFactory> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::IWindowsSoftwareUpdateProvider> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::IWindowsSoftwareUpdateProviderActionResult> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::IWindowsSoftwareUpdateProviderActionResultFactory> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::IWindowsSoftwareUpdateProviderFactory> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::IWindowsSoftwareUpdateProviderPayloadFileInfo> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::IWindowsSoftwareUpdateProviderStatus> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::IWindowsSoftwareUpdateProviderStatusFactory> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::IWindowsSoftwareUpdateResult> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::IWindowsSoftwareUpdateResultFactory> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::IWindowsSoftwareUpdateScanResult> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::IWindowsSoftwareUpdateScanResultFactory> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::IWindowsSoftwareUpdateVersion> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::IWindowsSoftwareUpdateVersionFactory> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Management::Update::IWindowsUpdate> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Management::Update::IWindowsUpdateActionCompletedEventArgs> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Management::Update::IWindowsUpdateActionProgress> : winrt::impl::hash_base {};
@@ -1796,13 +3876,34 @@ namespace std
     template<> struct hash<winrt::Windows::Management::Update::IWindowsUpdateGetAdministratorResult> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Management::Update::IWindowsUpdateItem> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Management::Update::IWindowsUpdateManager> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::IWindowsUpdateManager2> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Management::Update::IWindowsUpdateManagerFactory> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::IWindowsUpdateManagerFactory2> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::IWindowsUpdateManagerScanOptions> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::IWindowsUpdateManagerScanOptionsFactory> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Management::Update::IWindowsUpdateProgressChangedEventArgs> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Management::Update::IWindowsUpdateRestartRequestOptions> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Management::Update::IWindowsUpdateRestartRequestOptionsFactory> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Management::Update::IWindowsUpdateScanCompletedEventArgs> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Management::Update::PreviewBuildsManager> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Management::Update::PreviewBuildsState> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::WindowsSoftwareUpdate> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::WindowsSoftwareUpdateActionInfo> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::WindowsSoftwareUpdateActionProgress> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::WindowsSoftwareUpdateActionResultInfo> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::WindowsSoftwareUpdateAppPackageInfo> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::WindowsSoftwareUpdateApprovalInfo> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::WindowsSoftwareUpdateExecutionInfo> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::WindowsSoftwareUpdateLocalizationInfo> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::WindowsSoftwareUpdateOptionalActionInfo> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::WindowsSoftwareUpdateOptionalInfo> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::WindowsSoftwareUpdateProvider> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::WindowsSoftwareUpdateProviderActionResult> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::WindowsSoftwareUpdateProviderPayloadFileInfo> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::WindowsSoftwareUpdateProviderStatus> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::WindowsSoftwareUpdateResult> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::WindowsSoftwareUpdateScanResult> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::WindowsSoftwareUpdateVersion> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Management::Update::WindowsUpdate> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Management::Update::WindowsUpdateActionCompletedEventArgs> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Management::Update::WindowsUpdateActionProgress> : winrt::impl::hash_base {};
@@ -1814,6 +3915,7 @@ namespace std
     template<> struct hash<winrt::Windows::Management::Update::WindowsUpdateGetAdministratorResult> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Management::Update::WindowsUpdateItem> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Management::Update::WindowsUpdateManager> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Management::Update::WindowsUpdateManagerScanOptions> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Management::Update::WindowsUpdateProgressChangedEventArgs> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Management::Update::WindowsUpdateRestartRequestOptions> : winrt::impl::hash_base {};
     template<> struct hash<winrt::Windows::Management::Update::WindowsUpdateScanCompletedEventArgs> : winrt::impl::hash_base {};

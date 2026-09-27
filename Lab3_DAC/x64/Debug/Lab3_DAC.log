@@ -1,0 +1,6 @@
+﻿  dac.cpp
+dac.obj : error LNK2019: unresolved external symbol S826_SystemOpen referenced in function main
+dac.obj : error LNK2019: unresolved external symbol S826_SystemClose referenced in function main
+dac.obj : error LNK2019: unresolved external symbol S826_DacDataWrite referenced in function main
+dac.obj : error LNK2019: unresolved external symbol S826_DacRangeWrite referenced in function main
+C:\Repos\motion-control-lab\x64\Debug\Lab3_DAC.exe : fatal error LNK1120: 4 unresolved externals
