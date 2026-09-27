@@ -40,6 +40,15 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lab3_ADC", "Lab3_ADC\Lab3_A
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lab3_SineIO", "Lab3_SineIO\Lab3_SineIO.vcxproj", "{9B61C64D-C120-43D7-A8EC-6EB854DABE7E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sensory Dependancies", "Sensory Dependancies", "{D474CFDB-1A0F-4DF0-A657-BBE7CC8508DE}"
+	ProjectSection(SolutionItems) = preProject
+		826api.h = 826api.h
+		myWin826.cpp = myWin826.cpp
+		myWin826.h = myWin826.h
+		RealTime.cpp = RealTime.cpp
+		RealTime.h = RealTime.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
