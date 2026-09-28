@@ -14,6 +14,8 @@
 
 
 #define ADC_CNT_RANGE 0xFFFF			      // 2^16= 0xFFFF (16 bit converter) 
+// #define ADC_GAIN S826_ADC_GAIN_2 
+// #define ADC_VRANGE 10.0
 #define ADC_GAIN     S826_ADC_GAIN_1          
 #define ADC_VRANGE   20.0          // this must correspond to gain setting
 

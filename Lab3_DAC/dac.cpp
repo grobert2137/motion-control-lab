@@ -33,8 +33,14 @@ int main()
 		dacout = (uint)(voltageout * (DAC_CNT_RANGE / DAC_VRANGE) + DAC_OFFSET_COUNTS);
 
 		X826(S826_DacDataWrite(IO_BOARD_NUM, DAC_CHANNEL, dacout, 0));   // output dac sample - cast to short to get sign
+		//printf("%3.3fV \n", dacout);
 		printf("\nPress a key to continue, 'q' for exit\n");
 		key = _getch();
+
+		X826(AdcReadSlot(IO_BOARD_NUM, ADC_SLOT, &slotdata));          // wait for adc data sample
+		signed short int sample = slotdata;
+		printf("%d \n", sample);
+		printf("%3.3fV \n", ADC_VRANGE * sample / ADC_CNT_RANGE);
 	}
 
 	X826(S826_DacDataWrite(IO_BOARD_NUM, DAC_CHANNEL, DAC_ZERO_OUTPUT, 0));   // set DAC output to zero on close
