@@ -39,13 +39,15 @@ int main() { // take number input and get power series
     double x_input;
     double n_input;
 
-    printf("\nGive me X in degrees: ");
+    printf("\nGive me X in rad: ");
     scanf("%lf", &x_input);
     printf("\nGive me N: ");
     scanf("%lf", &n_input);
 
-    double ans = getSinApprox(((x_input/180.0)*3.14), n_input);
-    printf("\nAnswer is: %lf \n", ans);
-
+    double ans = getSinApprox(x_input, n_input);
+    double lib_ans = sin(x_input);
+    printf("\nAnswer is: %lf \n", ans); // Factorial approximation
+    printf("\nAnswer from Math library is: %lf \n", lib_ans); // Math Library answer
+     
     return 0;
 }
