@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Repos\\motion-control-lab\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E0BECECB-6AF2-4E80-86F5-87E9F61F28F2}|Lab4_SecondOrderIIR\\Lab4_SecondOrderIIR.vcxproj|C:\\Repos\\motion-control-lab\\Lab4_SecondOrderIIR\\secondOrderIIR.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E0BECECB-6AF2-4E80-86F5-87E9F61F28F2}|Lab4_SecondOrderIIR\\Lab4_SecondOrderIIR.vcxproj|solutionrelative:Lab4_SecondOrderIIR\\secondOrderIIR.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F03A6DC8-A929-4E21-B2B3-08D716D1AB87}|Lab4_FirstOrderIIR\\Lab4_FirstOrderIIR.vcxproj|C:\\Repos\\motion-control-lab\\Lab4_FirstOrderIIR\\firstOrderIIR.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{F03A6DC8-A929-4E21-B2B3-08D716D1AB87}|Lab4_FirstOrderIIR\\Lab4_FirstOrderIIR.vcxproj|solutionrelative:Lab4_FirstOrderIIR\\firstOrderIIR.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -11,8 +15,8 @@
       "RelativeMoniker": "D:0:0:{0D1197BB-BB4D-4903-8B2C-5A5CF5D01A87}|Lab4_Derivative\\Lab4_Derivative.vcxproj|solutionrelative:Lab4_Derivative\\derivative.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9B61C64D-C120-43D7-A8EC-6EB854DABE7E}|Lab3_SineIO\\Lab3_SineIO.vcxproj|C:\\Repos\\motion-control-lab\\RealTime.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9B61C64D-C120-43D7-A8EC-6EB854DABE7E}|Lab3_SineIO\\Lab3_SineIO.vcxproj|solutionrelative:RealTime.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{9FC1BF7D-55F4-4016-9B48-28E0DA3106A7}|_Resources{9FC1BF7D-55F4-4016-9B48-28E0DA3106A7}|C:\\Repos\\motion-control-lab\\notes.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{9FC1BF7D-55F4-4016-9B48-28E0DA3106A7}|_Resources{9FC1BF7D-55F4-4016-9B48-28E0DA3106A7}|solutionrelative:notes.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9B61C64D-C120-43D7-A8EC-6EB854DABE7E}|Lab3_SineIO\\Lab3_SineIO.vcxproj|C:\\Repos\\motion-control-lab\\Lab3_SineIO\\sineIO.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -26,50 +30,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "RealTime.cpp",
-              "DocumentMoniker": "C:\\Repos\\motion-control-lab\\RealTime.cpp",
-              "RelativeDocumentMoniker": "RealTime.cpp",
-              "ToolTip": "C:\\Repos\\motion-control-lab\\RealTime.cpp",
-              "RelativeToolTip": "RealTime.cpp",
+              "DocumentIndex": 3,
+              "Title": "notes.md",
+              "DocumentMoniker": "C:\\Repos\\motion-control-lab\\notes.md",
+              "RelativeDocumentMoniker": "notes.md",
+              "ToolTip": "C:\\Repos\\motion-control-lab\\notes.md",
+              "RelativeToolTip": "notes.md",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-10-05T10:05:51.776Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-10-05T21:20:20.745Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "secondOrderIIR.cpp",
+              "DocumentMoniker": "C:\\Repos\\motion-control-lab\\Lab4_SecondOrderIIR\\secondOrderIIR.cpp",
+              "RelativeDocumentMoniker": "Lab4_SecondOrderIIR\\secondOrderIIR.cpp",
+              "ToolTip": "C:\\Repos\\motion-control-lab\\Lab4_SecondOrderIIR\\secondOrderIIR.cpp",
+              "RelativeToolTip": "Lab4_SecondOrderIIR\\secondOrderIIR.cpp",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAC4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-10-05T21:19:25.863Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "derivative.cpp",
               "DocumentMoniker": "C:\\Repos\\motion-control-lab\\Lab4_Derivative\\derivative.cpp",
               "RelativeDocumentMoniker": "Lab4_Derivative\\derivative.cpp",
               "ToolTip": "C:\\Repos\\motion-control-lab\\Lab4_Derivative\\derivative.cpp",
               "RelativeToolTip": "Lab4_Derivative\\derivative.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAEAAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-10-05T09:23:53.854Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "firstOrderIIR.cpp",
               "DocumentMoniker": "C:\\Repos\\motion-control-lab\\Lab4_FirstOrderIIR\\firstOrderIIR.cpp",
               "RelativeDocumentMoniker": "Lab4_FirstOrderIIR\\firstOrderIIR.cpp",
               "ToolTip": "C:\\Repos\\motion-control-lab\\Lab4_FirstOrderIIR\\firstOrderIIR.cpp",
               "RelativeToolTip": "Lab4_FirstOrderIIR\\firstOrderIIR.cpp",
-              "ViewState": "AgIAADsAAAAAAAAAAAAgwEMAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAABsAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-10-05T09:21:46.054Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "sineIO.cpp",
               "DocumentMoniker": "C:\\Repos\\motion-control-lab\\Lab3_SineIO\\sineIO.cpp",
               "RelativeDocumentMoniker": "Lab3_SineIO\\sineIO.cpp",
@@ -77,7 +94,8 @@
               "RelativeToolTip": "Lab3_SineIO\\sineIO.cpp",
               "ViewState": "AgIAADsAAAAAAAAAAAAgwFUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-09-27T01:39:15.876Z"
+              "WhenOpened": "2026-09-27T01:39:15.876Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -3,30 +3,29 @@
 #include "../826api.h"
 #include "../RealTime.h"
 
-#define SAMPLE_RATE  1000    // SET ME
+// Sensoray Config
+#define IO_BOARD_NUM  0	
 
-// IO card configuration constants
-#define IO_BOARD_NUM  0						  // no change
-#define ADC_SLOT      0						  // no change
-
-#define DAC_ZERO_OUTPUT 0x8000
-#define DAC_CONFIG_GAIN S826_DAC_SPAN_10_10   // -10 to 10 spans 20 volts so...
-#define DAC_VRANGE    20.0                    // This MUST correspond to the DAC_SPAN just above
-#define DAC_CNT_RANGE 0xFFFF				  // 16-bit DAC
-#define DAC_OFFSET_COUNTS 0x8000              // 32768 offset for a signed desired output mapped to unsigned DAC write.
-
-#define DAC_CHANNEL   7						  // SET ME! CHECK YOUR SETUP: DAC channel output
-
-#define ADC_CHANNEL  1                        // SET ME! CHECK YOUR SETUP: analog input channel to track
-
-
+// ADC Config (INPUT)
+#define ADC_SLOT 0 
+#define ADC_ENABLE 1
 #define ADC_CNT_RANGE 0xFFFF				  // 2^16= 0xFFFF (16 bit converter) 
 #define ADC_GAIN     S826_ADC_GAIN_1          // -10 to 10 option
 #define ADC_VRANGE   20                       // this must correspond to gain setting
 
+// DAC Config (OUTPUT)
+#define DAC_CNT_RANGE 0xFFFF				  // 16-bit DAC
+#define DAC_CONFIG_GAIN S826_DAC_SPAN_10_10   // -10 to 10 spans 20 volts so...
+#define DAC_VRANGE    20.0                    // This MUST correspond to the DAC_SPAN just above
+#define DAC_ZERO_OUTPUT 0x8000
+#define DAC_OFFSET_COUNTS 0x8000              // 32768 offset for a signed desired output mapped to unsigned DAC write.
 
-#define ADC_ENABLE 1
+// Channels
+#define DAC_CHANNEL   7						  
+#define ADC_CHANNEL  1 
 
+// Sample Rate
+#define SAMPLE_RATE  1000  
 int main()
 {
 	int  errcode = S826_ERR_OK;
