@@ -21,8 +21,8 @@
 #define DAC_OFFSET_COUNTS 0x8000              // 32768 offset for a signed desired output mapped to unsigned DAC write.
 
 // Channels
-#define DAC_CHANNEL   7						  
-#define ADC_CHANNEL  1 
+#define DAC_CHANNEL  0						  
+#define ADC_CHANNEL  2 
 
 // Sample Rate
 #define SAMPLE_RATE  1000  
