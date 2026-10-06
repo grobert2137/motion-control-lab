@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 import math
+from tabler import Tabler
 
 # Constants
 A1 = 0.846
@@ -20,34 +21,6 @@ magSoIRR = []
 # Initialize Array
 f = np.arange(0, 151, 5)
 wt = 2*math.pi*f/FS
-
-class tabler():
-    def create():
-        data = []
-        while True:
-            x = input("For: ")
-            if x == "end":
-                break
-            y = input("Value: ")
-            data.append([x, y])
-
-        # Convert to DataFrame to display
-        df = pd.DataFrame({"Input" : data[1], "Output" : data[2]})
-        print(df)
-
-        # Prompt for plot
-        choice = input("Plot table?")
-        if choice == "y":
-            tabler.plot(data)
-        else:
-            print("Closing...")
-    
-    def plot(data):
-        arr = np.array(data, dtype=float)
-        plt.plot(arr[:, 0], arr[:, 1])
-        plt.xlabel("Input")
-        plt.ylabel("Output")
-        plt.title("TABLE PLOTTED")
 
 def first_order_iir (input):
     return B1 / math.sqrt(1-(2*A1*math.cos(input))+pow(A1, 2))

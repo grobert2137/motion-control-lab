@@ -36,8 +36,9 @@ int main()
 	uint dacout;
 
 	double voltagein = 0.0;
-	double voltageout = 0;
-	double voltagein_filt = 0.0;
+	double voltageout = 0.0;
+	double voltagein_prev = 0.0;
+	double derivative = 0.0;
 
 	// instantiate our "real time" object that will pace our loop
 	RealTime realTime(SAMPLE_RATE);
@@ -61,10 +62,10 @@ int main()
 		// get the ADC sample as a voltage
 		voltagein = (double)(adcin * ADC_VRANGE) / ADC_CNT_RANGE;
 
-		// First order IIR filter
-		voltagein_filt = (double) 
+		derivative = (double)(voltagein - voltagein_prev) * SAMPLE_RATE;
+		voltagein_prev = voltagein;
 
-		voltageout = voltagein_filt;
+		voltageout = derivative / (40*3.14);
 
 		// scale the desired voltage to the DAC integer output.
 		dacout = (uint)(voltageout * (DAC_CNT_RANGE / DAC_VRANGE) + DAC_OFFSET_COUNTS);
