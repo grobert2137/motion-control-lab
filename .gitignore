@@ -1,7 +1,11 @@
-   .vs/
-   */Debug/
-   */Release/
-   */x64/
-   */x86/
-   *.suo
-   *.user
+.vs/
+*.ipch
+*.obj
+*.pdb
+*.ilk
+*.exe
+x64/
+x86/
+Debug/
+Release/
+*.user
