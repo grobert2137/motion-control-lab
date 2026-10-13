@@ -1,7 +1,3 @@
-///////////////////////////////////////////////////////////////////////////////////////////////
-// SINEIO
-///////////////////////////////////////////////////////////////////////////////////////////////
-
 #define _CRT_SECURE_NO_WARNINGS
 #define _USE_MATH_DEFINES // for C++  
 #include <cmath>
@@ -27,23 +23,22 @@
 #define DAC_CNT_RANGE 0xFFFF				  // 16-bit DAC
 #define DAC_OFFSET_COUNTS 0x8000              // 32768 offset for a signed desired output mapped to unsigned DAC write.
 
-#define DAC_CHANNEL   7						  // SET ME! CHECK YOUR SETUP: DAC channel output
-
-#define ADC_CHANNEL  1                        // SET ME! CHECK YOUR SETUP: analog input channel to track
-
+// Channels
+#define DAC_CHANNEL  0					  
+#define ADC_CHANNEL  2 
 
 #define ADC_CNT_RANGE 0xFFFF				  // 2^16= 0xFFFF (16 bit converter) 
 #define ADC_GAIN     S826_ADC_GAIN_1          // -10 to 10 option
 #define ADC_VRANGE   20                       // this must correspond to gain setting
-
 
 #define ADC_ENABLE 1
 
 
 /* Coeficients for your second-order filter from matlab (Butter() or other IIR filter... */
 /* These are junk values so replace with your design */
-const double a[] = { 1.345467657000000, 1.456456410541927,  0.546461789075954 };
-const double b[] = { 0.77227049904470, 4.994454099808940,  0.65745227049904470 };
+
+const double a[] = {1.0000000000000000, -1.991114292201654, 0.991153595868935};
+const double b[] = {0.9995566972017647, -1.991133944035295, 0.9995566972017647};
 
 int main()
 {
@@ -86,6 +81,10 @@ int main()
 	S826_CounterStateWrite(0, 0, 1);               // Start tracking encoder position.
 	S826_CounterRead(0, 0, &start_count);          // Read initial encoder counts 
 
+	printf("n/Please enter the frequency: \n");
+	scanf_s("%lf", &Frequency);
+	printf("\nPlease enter the amplitude: \n");
+	scanf_s("%lf", &Amp);
 
 	// commence pseudo-real-time loop.
 	realTime.Start();
@@ -93,7 +92,7 @@ int main()
 
 	while (!_kbhit() && ncount < RECORD_LENGTH)
 	{
-		voltageout = 0.0;
+		voltageout = Amp*sin(2*M_PI*Frequency*ncount/SAMPLE_RATE);
 
 		// scale the desired voltage to the DAC integer output.
 		dacout = (uint)(voltageout * (DAC_CNT_RANGE / DAC_VRANGE) + DAC_OFFSET_COUNTS);
