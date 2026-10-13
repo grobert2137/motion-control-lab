@@ -9,7 +9,7 @@
 #include "../RealTime.h"
 
 #define SAMPLE_RATE  1000    // Hz
-#define MAX_LOOP_TIME  10    //seconds
+#define MAX_LOOP_TIME  20    //seconds
 #define RECORD_LENGTH (MAX_LOOP_TIME*SAMPLE_RATE)
 
 
