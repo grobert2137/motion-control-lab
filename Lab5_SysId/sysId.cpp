@@ -38,7 +38,7 @@
 /* These are junk values so replace with your design */
 
 const double a[] = {1.0000000000000000, -1.991114292201654, 0.991153595868935};
-const double b[] = {0.9995566972017647, -1.991133944035295, 0.9995566972017647};
+const double b[] = {0.9995566972017647, -1.991133944035295, 0.995566972017647};
 
 int main()
 {
@@ -115,7 +115,6 @@ int main()
 
 	X826(S826_DacDataWrite(IO_BOARD_NUM, DAC_CHANNEL, DAC_ZERO_OUTPUT, 0));   // put to zero at the end
 	S826_SystemClose();
-
 
 	// file output
 	printf("\nType in a file name (freq_amp like 50_10 for 5Hz, 1V is a good idea):\n");
