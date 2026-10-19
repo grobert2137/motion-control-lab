@@ -73,7 +73,6 @@ int main()
 
 	// instantiate our "real time" object that will pace our loop
 	RealTime realTime(SAMPLE_RATE);
-
 	
 	// Configure data acquisition interfaces and start them running.
 	X826(S826_AdcSlotConfigWrite(IO_BOARD_NUM, ADC_SLOT, ADC_CHANNEL, 0, ADC_GAIN));  // program adc timeslot attributes: slot, chan, 0us settling time. For -5V-5V use: "S826_ADC_GAIN_2"
@@ -93,10 +92,8 @@ int main()
 	scanf_s("%lf", &Amp);
 	/**************** end ****************/
 
-
 	// commence pseudo-real-time loop.
 	realTime.Start();  
-
 
 	while (!_kbhit() && ncount < RECORD_LENGTH)
 	{
@@ -123,7 +120,6 @@ int main()
 
 	X826(S826_DacDataWrite(IO_BOARD_NUM, DAC_CHANNEL, DAC_ZERO_OUTPUT, 0));   // put to zero at the end
 	S826_SystemClose();
-
 
 	// file output
 	printf("\nType in a file name (freq_amp like 50_10 for 5Hz, 1V is a good idea):\n");
