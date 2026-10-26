@@ -43,7 +43,6 @@ A_in = 1; % 1V
 PPR = 1000; % Pulse per revolution of encoder
 ratio = (count_amp) / A_in
 
-% Question 4 Ans
 dB = 20*log10(ratio)
 
 

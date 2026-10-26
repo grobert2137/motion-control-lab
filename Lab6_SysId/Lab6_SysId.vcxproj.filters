@@ -21,10 +21,10 @@
     <ClCompile Include="..\RealTime.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Lab5_SysId\IIRdf1filt.cpp">
+    <ClCompile Include="sysId_motorId.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="sysId_motorId.cpp">
+    <ClCompile Include="IIRdf1filt.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

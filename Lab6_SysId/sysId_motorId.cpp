@@ -81,7 +81,7 @@ int main()
 	S826_CounterStateWrite(0, 0, 1);               // Start tracking encoder position.
 	S826_CounterRead(0, 0, &start_count);          // Read initial encoder counts 
 
-	printf("n/Please enter the frequency: \n");
+	printf("\nPlease enter the frequency: \n");
 	scanf_s("%lf", &Frequency);
 	printf("\nPlease enter the amplitude: \n");
 	scanf_s("%lf", &Amp);

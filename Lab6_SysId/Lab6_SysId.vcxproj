@@ -125,9 +125,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\Lab5_SysId\IIRdf1filt.cpp" />
     <ClCompile Include="..\myWin826.cpp" />
     <ClCompile Include="..\RealTime.cpp" />
+    <ClCompile Include="IIRdf1filt.cpp" />
     <ClCompile Include="sysId_motorId.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
