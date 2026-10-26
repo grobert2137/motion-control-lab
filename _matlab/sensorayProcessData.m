@@ -1,7 +1,7 @@
 %function sensorayProcessData(filePath)
 
 Fs = 1000; % Sample Rate (Hz)
-filePath = '50_10test.txt';
+filePath = '50_10_grant.txt';
 
 data = load(filePath);
 numLines = size(data, 1); % gets rows of data
@@ -20,7 +20,7 @@ figure('Name', 'Sensoray Data');
 subplot(1,1,1);
 plot(t, raw);
 hold on;
-plot(t, filt);
+%plot(t, filt);
 xlabel('Time (s)');
 ylabel('Output (V)');
 legend('Raw Data', 'Filtered Data');

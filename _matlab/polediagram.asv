@@ -1,0 +1,20 @@
+% Tf
+
+s = tf('s');
+sys = (10*(s+1)/((s+10)*(s+10^3)*(s+10^4)));
+
+figure(1) 
+pzmap(sys);
+
+figure(2)
+bode(sys);
+
+figure(3);
+h = pzplot(sys);grid on;
+
+% % 3. Find and customize the markers
+% % This finds all line elements on the plot (poles and zeros)
+% lines = findobj(gca, 'Type', 'Line');
+% 
+% % 4. Adjust the sizes
+% set(lines, 'MarkerSize', 12, 'LineWidth', 2.5);
