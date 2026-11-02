@@ -46,97 +46,127 @@ int main() {
 	uint counts;
 	uint start_count;
 	uint dacout;
-	uint counts_error; 
+	double counts_error; 
 
 	int          enc_samples[ITERATIONS];
 	unsigned int ref_position = ENC_REFERENCE_STEP_COUNTS;
 	float        Kp = 0.008;
+	float command;
 	char         key = '\0';
 
-	//---*****WARNING!*****---DO NOT CHANGE THE CODE BETWEEN WARNINGS-----------------
-	sample_period = PERFORMANCE_COUNTS / SAMPLE_RATE; // sample period in NT performance counts
-	SetPriorityClass(GetCurrentProcess(), REALTIME_PRIORITY_CLASS); // set this program to run at a high priority under NT to ensure real-time behavior
-	//--***** END WARNING! *****-------------------------------------------------------
+	
+	
+	// Application Loop
+	while (key != 'q') { // Shut down program with Q
 
-	// Configure interfaces and start them running
-	X826(S826_DacRangeWrite(IO_BOARD_NUM, DAC_CHANNEL, DAC_CONFIG_GAIN, 0));  // program dac output range: -10V to +10V
-	S826_CounterModeWrite(0, 0, S826_CM_K_QUADX1);  // Configure counter0 as incremental encoder interface.
-	S826_CounterStateWrite(0, 0, 1);                // Start tracking encoder position.
-	S826_CounterRead(0, 0, &start_count);           // Read initial encoder counts 
+		system("cls");
+		printf("-------------HOME SCREEN--------------- \n [t] -> TUNING MODE\n [r] -> RUN MODE\n [k] -> KP ADJUST\n [s] -> SAVE PREVIOUS RUN\n\n");
+		printf("\nKP = %.3f", Kp);
+		printf("\nREF_POSITION = %u", ref_position);
+		printf("\n\nPRESS Q TO EXIT\n");
+		
+		key = _getch();
 
-
-	// user input...
-	printf("\nPlease enter the gain Kp:\n");
-	scanf_s("%f", &Kp);
-
-	// Get reference time just as we  enter the loop for post analysis of timing.
-	// We compare windows timer with total time divided by number of iterations.
-	start = clock();
-
-	// get system performance counts NOW
-	QueryPerformanceCounter(&hr0);
-	printf("Starting P tuning program...");
-
-	// Control Loop...
-	while (key != 't' && key != 'r' && key != 's' && key != 's') { // Shut down program with Q
 		switch (key) {
+
 			case 't': 
-				printf("Welcome to TUNING MODE!\n Press RIGHT to +500\n Press LEFT to -500");
+				system("cls");
+				printf("-------WELCOME TO TUNING MODE!--------\n\n Press RIGHT ARROW to +500\n Press LEFT ARROW to -500\n\n PRESS E TO EXIT\n");
 				while(key != 'e') {
 					key = _getch();
-						if (77 == key) { ref_position += 500; printf("ref_position = %u", ref_position);} 
-						else if (75 == key) { ref_position -= 500; printf("ref_position = %u", ref_position);}
+						if (77 == key) { ref_position += 500; printf("\033[2K\rref_position = %u", ref_position);}
+						else if (75 == key) { ref_position -= 500; printf("\033[2K\rref_position = %u", ref_position);}
 				}
 				continue;
 
-			case 'r'
-				printf("Welcome to RUN MODE")
+			case 'r':
+				system("cls");
+				printf("---------- WELCOME TO RUN MODE ---------------");
+				
 
-				// for (int i = 0; i < ITERATIONS; i++) {
-				// 	S826_CounterRead(0, 0, &counts);          // Read current encoder counts.
-				// 	counts = counts - start_count; 
+				//---*****WARNING!*****---DO NOT CHANGE THE CODE BETWEEN WARNINGS-----------------
+				sample_period = PERFORMANCE_COUNTS / SAMPLE_RATE; // sample period in NT performance counts
+				SetPriorityClass(GetCurrentProcess(), REALTIME_PRIORITY_CLASS); // set this program to run at a high priority under NT to ensure real-time behavior
+				//--***** END WARNING! *****-------------------------------------------------------
 
-				// 	// Clamp control input as a safety rails so we don't crash
-				// 	if (abs(command) > DAC_VRANGE / 2.0) {
-				// 		command = command / abs(command) * DAC_VRANGE / 2.0;
-				// 		printf("command saturated!!!");
-				// 	printf("command %lf\n", command);
-				// 	printf("counts %10d\n", counts); 
-				// 	}
+				// Configure interfaces and start them running
+				X826(S826_DacRangeWrite(IO_BOARD_NUM, DAC_CHANNEL, DAC_CONFIG_GAIN, 0));  // program dac output range: -10V to +10V
+				S826_CounterModeWrite(0, 0, S826_CM_K_QUADX1);  // Configure counter0 as incremental encoder interface.
+				S826_CounterStateWrite(0, 0, 1);                // Start tracking encoder position.
+				S826_CounterRead(0, 0, &start_count);           // Read initial encoder counts 
 
-				// 	dacout = (uint)(command * (uint)(DAC_CNT_RANGE / DAC_VRANGE) + DAC_OFFSET_COUNTS);
-				// 	X826(S826_DacDataWrite(IO_BOARD_NUM, DAC_CHANNEL, dacout, 0));
+				// Get reference time just as we  enter the loop for post analysis of timing.
+				// We compare windows timer with total time divided by number of iterations.
+				start = clock();
 
-				// 	if (ncount < ITERATIONS) {
-				// 		enc_samples[ncount] = counts;
-				// 		ncount++;
-				// 	}
+				// get system performance counts NOW
+				QueryPerformanceCounter(&hr0);
 
-				// 	sleepfor(hr0, sample_period);
-				// 	QueryPerformanceCounter(&hr0); // counts from right NOW
-				// 	//ncount++;
-				//}
+				while (key != 'e') {
+					// Read current encoder counts
+					S826_CounterRead(0, 0, &counts);
+					counts = counts - start_count;
+
+					counts_error = (double)((int)ref_position - (int)counts);
+					command = Kp * counts_error;
+
+					// Clamp control input as a safety rails so we don't crash
+					if (abs(command) > DAC_VRANGE / 2.0) {
+						command = command / abs(command) * DAC_VRANGE / 2.0;
+						printf("command saturated!!!");
+					}
+					printf("command %lf\n", command);
+					printf("counts %10d\n", counts);
+
+					dacout = (uint)(command * (uint)(DAC_CNT_RANGE / DAC_VRANGE) + DAC_OFFSET_COUNTS);
+					X826(S826_DacDataWrite(IO_BOARD_NUM, DAC_CHANNEL, dacout, 0));
+
+					if (ncount < ITERATIONS) {
+						enc_samples[ncount] = counts;
+						ncount++;
+					}
+
+					if (_kbhit()) {
+						key = _getch();
+					}
+
+					sleepfor(hr0, sample_period);
+					QueryPerformanceCounter(&hr0); // counts from right NOW
+
+					//--***** END WARNING! *****-------------------------------------------------------
+	
+				}
+				//Zero the DAC output immediately upon loop exit
+				X826(S826_DacDataWrite(IO_BOARD_NUM, DAC_CHANNEL, 0x8000, 0));   // put to zero at the end
+
+				//---*****WARNING!*****---DO NOT CHANGE THE CODE BETWEEN WARNINGS-----------------
+				stop = clock();
+				elapsed_time = (float)(stop - start) / CLOCKS_PER_SEC; // calculate how fast the loop ran
+				ffr = ((float)ncount) / elapsed_time;
+				printf("\n%d cycles in %f sec (%f Hz, %f sec))\n", ncount, elapsed_time, ffr, 1.0 / ffr);
+
+				save_enc_count_data(enc_samples, ncount);
+
 				continue;
+
+			case 'k':
+				// user input...
+				printf("\nPlease enter the gain Kp:\n");
+				scanf_s("%f", &Kp);
+				printf("\nNew Kp Value is: %f\n", Kp);
+				Sleep(2000);
+				continue;
+
 			case 's':
 				printf("Saving previous data run as");
+				
 				continue;
+
 			case 'q':
 				break;
 			} 
 		}
-
-	// Zero the DAC output immediately upon loop exit
-	X826(S826_DacDataWrite(IO_BOARD_NUM, DAC_CHANNEL, 0x8000, 0));   // put to zero at the end
-
-	//---*****WARNING!*****---DO NOT CHANGE THE CODE BETWEEN WARNINGS-----------------
-	stop = clock();
-	elapsed_time = (float)(stop - start) / CLOCKS_PER_SEC; // calculate how fast the loop ran
-	ffr = ((float)ncount) / elapsed_time;
-	printf("\n%d cycles in %f sec (%f Hz, %f sec))\n", ncount, elapsed_time, ffr, 1.0 / ffr);
-	S826_SystemClose();
-	//--***** END WARNING! *****-------------------------------------------------------
- 
-	save_enc_count_data(enc_samples, ncount); // save data
+		S826_SystemClose();
 	return 0;
 }
 
