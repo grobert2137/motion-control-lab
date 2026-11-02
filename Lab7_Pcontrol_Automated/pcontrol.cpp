@@ -3,7 +3,6 @@
 #include <time.h>
 #include <fstream>
 
-
 // Time parameters
 #define SAMPLE_RATE         1000.0
 #define PERFORMANCE_COUNTS  10000000 
@@ -49,10 +48,10 @@ int main() {
 	uint dacout;
 	uint counts_error; 
 
-	int  enc_samples[ITERATIONS];
+	int          enc_samples[ITERATIONS];
 	unsigned int ref_position = ENC_REFERENCE_STEP_COUNTS;
-	float        Kp = 0;
-	char key = '\0';
+	float        Kp = 0.008;
+	char         key = '\0';
 
 	//---*****WARNING!*****---DO NOT CHANGE THE CODE BETWEEN WARNINGS-----------------
 	sample_period = PERFORMANCE_COUNTS / SAMPLE_RATE; // sample period in NT performance counts
@@ -76,58 +75,55 @@ int main() {
 
 	// get system performance counts NOW
 	QueryPerformanceCounter(&hr0);
+	printf("Starting P tuning program...");
 
 	// Control Loop...
-	while (key != 'q') {
+	while (key != 't' && key != 'r' && key != 's' && key != 's') { // Shut down program with Q
+		switch (key) {
+			case 't': 
+				printf("Welcome to TUNING MODE!\n Press RIGHT to +500\n Press LEFT to -500");
+				while(key != 'e') {
+					key = _getch();
+						if (77 == key) { ref_position += 500; printf("ref_position = %u", ref_position);} 
+						else if (75 == key) { ref_position -= 500; printf("ref_position = %u", ref_position);}
+				}
+				continue;
 
-		/*** Your Motor Control Code logic goes here ***/
+			case 'r'
+				printf("Welcome to RUN MODE")
 
-		/* read encoder */
-		S826_CounterRead(0, 0, &counts);          // Read current encoder counts.
-		counts = counts - start_count;             // Subtracting the initial counts so we begin from 0 
+				// for (int i = 0; i < ITERATIONS; i++) {
+				// 	S826_CounterRead(0, 0, &counts);          // Read current encoder counts.
+				// 	counts = counts - start_count; 
 
+				// 	// Clamp control input as a safety rails so we don't crash
+				// 	if (abs(command) > DAC_VRANGE / 2.0) {
+				// 		command = command / abs(command) * DAC_VRANGE / 2.0;
+				// 		printf("command saturated!!!");
+				// 	printf("command %lf\n", command);
+				// 	printf("counts %10d\n", counts); 
+				// 	}
 
-		/* generate input signal for voltage to command */
-		counts_error = ref_position - counts;
-		command = kp * (float)counts_error;
+				// 	dacout = (uint)(command * (uint)(DAC_CNT_RANGE / DAC_VRANGE) + DAC_OFFSET_COUNTS);
+				// 	X826(S826_DacDataWrite(IO_BOARD_NUM, DAC_CHANNEL, dacout, 0));
 
+				// 	if (ncount < ITERATIONS) {
+				// 		enc_samples[ncount] = counts;
+				// 		ncount++;
+				// 	}
 
-		// Clamp control input as a safety rails so we don't crash
-		if (abs(command) > DAC_VRANGE / 2.0) {
-			command = command / abs(command) * DAC_VRANGE / 2.0;
-			printf("command saturated!!!");
+				// 	sleepfor(hr0, sample_period);
+				// 	QueryPerformanceCounter(&hr0); // counts from right NOW
+				// 	//ncount++;
+				//}
+				continue;
+			case 's':
+				printf("Saving previous data run as");
+				continue;
+			case 'q':
+				break;
+			} 
 		}
-		printf("command %lf\n", command);
-		printf("counts %10d\n", counts);
-
-		// Map command voltage to command counts, and offset the signed command to unsigned DAC write.
-		// See above where DAC is initialized -VRANGE to +VRANGE. Its input range is unsigned 16-bit.
-		// We need to shift our bipolar command up into this unsigned DAC input range.
-		// The DAC will map it back to negative or positive based on the setup above.
-
-		dacout = (uint)(command * (uint)(DAC_CNT_RANGE / DAC_VRANGE) + DAC_OFFSET_COUNTS);
-		X826(S826_DacDataWrite(IO_BOARD_NUM, DAC_CHANNEL, dacout, 0));
-
-		if (ncount < ITERATIONS) {
-			enc_samples[ncount] = counts;
-			ncount++;
-		}
-
-		if (_kbhit()) {
-			key = _getch();
-			if (77 == key) { //if right arrow key is hit
-				ref_position += 500;
-			}
-			else if (75 == key) { //if left arrow key is hit
-				ref_position -= 500;
-			}
-		}
-
-		//enc_samples[ncount] = counts;
-		sleepfor(hr0, sample_period);
-		QueryPerformanceCounter(&hr0); // counts from right NOW
-		//ncount++;
-	}
 
 	// Zero the DAC output immediately upon loop exit
 	X826(S826_DacDataWrite(IO_BOARD_NUM, DAC_CHANNEL, 0x8000, 0));   // put to zero at the end
@@ -143,7 +139,6 @@ int main() {
 	save_enc_count_data(enc_samples, ncount); // save data
 	return 0;
 }
-
 
 // ------------------------------------ HELPER FUNCTIONS --------------------------------------- //
 
