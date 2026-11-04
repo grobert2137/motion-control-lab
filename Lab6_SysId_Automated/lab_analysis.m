@@ -73,7 +73,6 @@ scatter(data.free.freq(1:16), data.free.gain(1:16), 'ro');
 hold on;
 scatter(data.free.freq(17:32), data.free.gain(17:32), 'gx');
 
-
 gx = gca;
 gx.XScale = 'log';
 

@@ -1,0 +1,120 @@
+%% LAB 6 BATCH PROCESS
+
+close all; clear; clc;
+
+%%----------------------------- SETTINGS ----------------------------------
+
+FS = 1000; % Sample Rate (Hz)
+plantNames = ["Unloaded", "Loaded"];
+folderNames = ["noload_output", "loaded_output"];
+
+varNames = ["Loaded", "ampV", "freqHz", "w", "crms", "camp", "gainDB"];
+varTypes = ["logical", "double", "double", "double", "double", "double", "double"];
+
+T = table('Size', [0, 7], 'VariableTypes', varTypes,'VariableNames',varNames);
+
+%%-------------------- DISCOVER FILES ------------------
+%%-------------------- READ  ---------------------------
+%%-------------------- COLLECT  ------------------------
+
+row = 0;
+for p = 1:numel(folderNames)
+    files = dir(fullfile(folderNames(p), "*.txt")); % Load only files that are .txt
+    for k = 1:numel(files)
+        
+        % LOAD INTO MATRIX
+        M = readmatrix(fullfile(files(k).folder, files(k).name));
+
+        % Create time vector for number of lines in .txt file
+        t = (0:size(M,1)-1)' / FS;
+
+        % Column of interest
+        filt = M(:, 2);
+
+        % Get Count AMP
+        filt_ss = filt(t >= 0.5); % get steady input only
+        filt_minusOffset = filt_ss - mean(filt_ss);
+        crms = sqrt(mean(filt_minusOffset.^2));
+        camp = sqrt(2) * crms;
+
+        % Get amplitude & frequency from file name
+        [~, name] = fileparts(files(k).name);
+        ampV = str2double(extractBefore(name, '_'));
+        freqHz = str2double(extractAfter(name, '_')) / 10;   % file stores Hz x 10
+        w = 2*pi*freqHz;
+        gainDB = 20*log10(camp/ampV);
+    
+        row = row + 1;
+        T(row, :) = {plantNames(p) == "Loaded", ampV, freqHz, w, crms, camp, gainDB};
+    end
+end
+
+T = sortrows(T, {'Loaded',  'ampV', 'freqHz'});
+disp(T);
+
+%% Split data by plant
+Tu = T(~T.Loaded, :);     % unloaded rows
+Tl = T( T.Loaded, :);     % loaded rows
+
+%% Raw data plots
+plotScatter(Tu, "Unloaded - Raw Data", ["ro", "gx"]);
+plotScatter(Tl, "Loaded - Raw Data",   ["ro", "gx"]);
+
+%% Data with asymptotes
+plotScatter(Tu, "Unloaded - Asymptotes", ["ro", "gx"]);
+resU = findKm(Tu, "Unloaded", 5, [10 70], [80 500], [1 3], [1 3]);
+
+plotScatter(Tl, "Loaded - Asymptotes", ["ro", "gx"]);
+resL = findKm(Tl, "Loaded", 5, [0 120], [120 500], [1 3], [1 3]);
+
+results = [resU; resL];
+disp(results)
+
+%% Local Functions
+function plotScatter(Tp, plant, markers)
+    
+    figure('Name', plant); 
+    hold on; 
+    grid on
+    set(gca, 'XScale', 'log');
+ 
+    amps = unique(Tp.ampV);
+    for a = 1:numel(amps)
+        sel = Tp.ampV == amps(a);
+        plot(Tp.w(sel), Tp.gainDB(sel), char(markers(a)));
+    end
+
+    xlabel('\omega (rad/s)'); 
+    ylabel('Gain (dB)'); 
+    title(plant); 
+    legend show;
+end
+
+function results = findKm(Tp, plant, fitAmp, wLowIdx, wHighIdx, xLowPlot, xHighPlot)
+
+    F = Tp(Tp.ampV == fitAmp, :);
+    x = log10(F.w);
+
+    % Get the input ranges
+    lowSel  = F.w >= wLowIdx(1) & F.w <= wLowIdx(2);
+    highSel = F.w >= wHighIdx(1) & F.w <= wHighIdx(2);
+
+    % Line fitting toolbox
+    pLow  = polyfit(x(lowSel), F.gainDB(lowSel),  1);
+    pHigh = polyfit(x(highSel), F.gainDB(highSel), 1);
+
+    %frequency and KM
+    xc  = (pHigh(2) - pLow(2)) / (pLow(1) - pHigh(1));
+    wc  = 10^xc;
+    Km  = 10^(polyval(pLow, 0)/20);       % low asymptote at w = 1 rad/s
+
+    % Draw each line over its own range
+    xxLow  = linspace(xLowPlot(1), xLowPlot(2),  200);
+    xxHigh = linspace(xHighPlot(1), xHighPlot(2), 200);
+    plot(10.^xxLow,  polyval(pLow,  xxLow),  'b--', 'LineWidth', 1.5, 'DisplayName', 'Low asymptote');
+    plot(10.^xxHigh, polyval(pHigh, xxHigh), 'k--', 'LineWidth', 1.5, 'DisplayName', 'High asymptote');
+
+    results = table(plant, pLow(1), pHigh(1), wc, Km, 'VariableNames', ["plant","lowFreqSlope","highFreqSlope","wc","Km"]);
+end
+
+    
