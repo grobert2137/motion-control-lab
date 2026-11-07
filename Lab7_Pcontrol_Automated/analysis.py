@@ -2,22 +2,40 @@ import matplotlib.pyplot as plt
 # import numpy.polynomial.polyutils
 import pandas as pd
 import numpy as np
+import glob
 
 # Constants
 FS = 1000
+TIME = 2000 # ms
 
-a = pd.Series(pd.read_csv("Lab7_Pcontrol_Automated/ex1_uw_8.txt"))
-b = pd.Series(pd.read_csv("Lab7_Pcontrol_Automated/ex1_uw_4.txt"))
-c = pd.Series(pd.read_csv("Lab7_Pcontrol_Automated/ex1_uw_1.txt"))
+# Helper funcs
+def get_plant(inputString):
+    result = inputString.split("_")
+    match result(1):
+            case "uw":
+                return "unweighted"
+            case "w" : 
+                return "weighted"
 
-#plt.plot(g);
-#plt.show();
-print(a)
+def get_kp(inputString):
+    result = inputString.split("_")
+    match result(2):
+            case "8":
+                return 0.08
+            case "4" : 
+                return 0.04
+            case "1" :
+                return 0.01
 
-#uwData = pd.DataFrame(data, columns=["Kp = 0.008", "Kp = 0.004", "Kp = 0.001"])
+# Create np array vector
+t = np.arange(0, 2000)
 
-df = pd.DataFrame(columns=["Plant", "Setpoint", "SS", "SS_Error"])
+# Organize files
+file_list = sorted(glob.glob("/Lab7_Pcontrol_Automated/data/*.txt"))
+
+print(file_list)
 
 
-print(df)
-#print(uwData)
+
+
+
