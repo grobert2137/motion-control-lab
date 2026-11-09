@@ -21,7 +21,7 @@
 
 // Encoder Constants
 #define ENC_COUNTS_PER_REV         1000   // counts per revolution
-#define ENC_REFERENCE_STEP_COUNTS  500    
+#define ENC_REFERENCE_STEP_COUNTS  250  // Amplitude of Sin input   
 
 
 // local function definitions
@@ -51,12 +51,13 @@ int main() {
 
 	// Loop Constants
 	const double freq[16] = { 2.5, 5.0, 10.0, 15.0, 20.0, 25.0, 30.0, 35.0, 40.0, 45.0, 50.0, 55.0, 60.0, 65.0, 70.0, 75.0 };
-	const double amp[2] = { 0.5, 1.0 };
+	const double kp_values[2] = {};
 	const size_t freq_length = sizeof(freq) / sizeof(freq[0]);
 	const size_t amp_length = sizeof(amp) / sizeof(amp[0]);
 
 	int enc_samples[ITERATIONS];
 	unsigned int ref_position = ENC_REFERENCE_STEP_COUNTS;
+	voltageout = 
 	float command;
 	char key = '\0';
 
@@ -175,6 +176,8 @@ void runMotor() {
 
 	// get system performance counts NOW
 	QueryPerformanceCounter(&hr0);
+
+	ENC_REFERENCE_STEP_COUNTS * sin(2 * M_PI * 5 * ncount / SAMPLE_RATE);
 
 	while (key != 'e') {
 
