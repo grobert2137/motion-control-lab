@@ -78,7 +78,7 @@ int main() {
 	// Application Loop
 	while (key != 'q') { // Shut down program with Q
 		system("cls");
-		printf("-------------HOME SCREEN--------------- \n [s] -> EXERCISE_1\n [r] -> RUN MODE (EXCERCISE 2-5)\n\n");
+		printf("-------------HOME SCREEN--------------- \n [s] -> EXERCISE_1\n [r] -> RUN MODE (EXCERCISE 2-5)\n [w] -> RUN PLANT 2 ONLY\n\n");
 		getGainVals();
 		printf("\n\nPRESS Q TO EXIT\n");
 
@@ -101,6 +101,10 @@ int main() {
 				runMotor(1, sample_period);
 				system("cls");
 				continue;
+			case 'w':
+				system("cls");
+				printf("\n\n---------------- Running ONLY Plant 2 (loaded) ----------------\n");
+				runMotor(1, sample_period);
 			case 'q':
 			// exit main()
 				break;
@@ -208,12 +212,14 @@ int runMotor(int plant, long sample_period) {
 		// reset ncount
 		ncount = 0;
 
+		printf("\nValues Reset. Running test %d\n", i);
 		S826_CounterRead(0, 0, &start_count);  // Read initial encoder counts
 		start = clock();
 
 		// get system performance counts NOW
 		QueryPerformanceCounter(&hr0);
 
+		// 2 or 2.5 second control loop
 		while (ncount < iterations) {
 			// Read current encoder counts
 			S826_CounterRead(0, 0, &counts);
@@ -256,7 +262,33 @@ int runMotor(int plant, long sample_period) {
 		ffr = ((float)ncount) / elapsed_time;
 		printf("\n%d cycles in %f sec (%f Hz, %f sec))\n", ncount, elapsed_time, ffr, 1.0 / ffr);
 
-		save_enc_count_data(enc_samples, ncount);
+		FILE* datafile = NULL;
+		int i;
+
+		/*
+		P Control (Plant 1)   = 0
+		PI Control (Plant 1)  = 1
+		PID Control (Plant 1) = 2
+
+		P Control (Plant 2)   = 3
+		PI Control (Plant 2)  = 4
+		PID Control (Plant 2) = 5
+		*/
+		char fileName[30];
+		snprintf(fileName, sizeof(fileName), "ControllerTest_%d.txt", (int)i);
+
+		fopen_s(&datafile, fileName, "w");
+		if (datafile == NULL) {
+			printf("\nError opening file\n");
+			return(-1);
+		}
+
+		for (i = 0; i < element_num; i++) {
+			fprintf(datafile, "%d\n", filtered_data[i]);
+		}
+
+		fclose(datafile);
+		Sleep(2000);
 	}
 	return 0;
 }
