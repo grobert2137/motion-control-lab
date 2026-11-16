@@ -263,7 +263,6 @@ int runMotor(int plant, long sample_period) {
 		printf("\n%d cycles in %f sec (%f Hz, %f sec))\n", ncount, elapsed_time, ffr, 1.0 / ffr);
 
 		FILE* datafile = NULL;
-		int i;
 
 		/*
 		P Control (Plant 1)   = 0
@@ -283,8 +282,8 @@ int runMotor(int plant, long sample_period) {
 			return(-1);
 		}
 
-		for (i = 0; i < element_num; i++) {
-			fprintf(datafile, "%d\n", filtered_data[i]);
+		for (int k = 0; k < ncount; k++) {
+			fprintf(datafile, "%d\n", enc_samples[k]);
 		}
 
 		fclose(datafile);
